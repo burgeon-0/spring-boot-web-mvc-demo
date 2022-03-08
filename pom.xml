@@ -11,11 +11,11 @@
     </parent>
 
     <groupId>org.burgeon</groupId>
-    <artifactId>spring-boot-web-mvc-demo</artifactId>
+    <artifactId>yi</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>spring-boot-web-mvc-demo</name>
+    <name>yi</name>
     <description>Demo project for Spring Boot</description>
 
     <repositories>
