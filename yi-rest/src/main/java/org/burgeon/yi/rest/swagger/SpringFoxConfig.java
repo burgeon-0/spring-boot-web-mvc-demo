@@ -1,4 +1,4 @@
-package org.burgeon.yi.user.common.config;
+package org.burgeon.yi.rest.swagger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
