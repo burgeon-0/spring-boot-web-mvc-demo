@@ -10,11 +10,13 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
+    <groupId>org.burgeon</groupId>
     <artifactId>yi-rest</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
+
     <name>yi-rest</name>
-    <description>Mall</description>
+    <description>Rest</description>
 
     <dependencies>
         <!-- spring web -->

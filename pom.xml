@@ -14,11 +14,12 @@
     <artifactId>yi</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
+
     <name>yi</name>
     <description>Yi</description>
 
     <modules>
-        <module>yi-mall</module>
+        <module>biz-user</module>
         <module>yi-rest</module>
     </modules>
 

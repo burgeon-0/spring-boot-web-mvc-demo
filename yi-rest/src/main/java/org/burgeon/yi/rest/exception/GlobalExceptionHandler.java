@@ -154,7 +154,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Response> handleBaseException(ValidateException e) {
         IError error = e.getError();
         Response response = new Response(error.getCode(), e.getMessage());
-        return new ResponseEntity(response, HttpStatus.valueOf(error.getCode() / 100000));
+        return new ResponseEntity(response, HttpStatus.valueOf(error.getCode() / 10000));
     }
 
     @ExceptionHandler(RuntimeException.class)
