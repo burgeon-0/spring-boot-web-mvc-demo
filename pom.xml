@@ -21,6 +21,7 @@
     <modules>
         <module>biz-user</module>
         <module>yi-rest</module>
+        <module>auth-service</module>
     </modules>
 
     <distributionManagement>
