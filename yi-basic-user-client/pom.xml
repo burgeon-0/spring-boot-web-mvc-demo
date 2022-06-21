@@ -18,6 +18,10 @@
     <description>User Client</description>
 
     <dependencies>
+        <dependency>
+            <groupId>org.burgeon</groupId>
+            <artifactId>yi-boot-definition</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

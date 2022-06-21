@@ -27,6 +27,12 @@
         <module>auth-service</module>
     </modules>
 
+    <properties>
+        <yi.basic.user.client.version>1.0.0-SNAPSHOT</yi.basic.user.client.version>
+        <yi.boot.definition.version>1.0.0-SNAPSHOT</yi.boot.definition.version>
+        <lombok.version>1.18.24</lombok.version>
+    </properties>
+
     <distributionManagement>
         <repository>
             <id>central</id>
@@ -38,6 +44,22 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.burgeon</groupId>
+                <artifactId>yi-basic-user-client</artifactId>
+                <version>${yi.basic.user.client.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.burgeon</groupId>
+                <artifactId>yi-boot-definition</artifactId>
+                <version>${yi.boot.definition.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
