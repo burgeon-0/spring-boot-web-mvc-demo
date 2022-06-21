@@ -19,12 +19,9 @@
     <description>Yi</description>
 
     <modules>
-        <module>yi-basic-user</module>
-        <module>yi-basic-user-client</module>
-        <module>yi-boot-definition</module>
-        <module>biz-user</module>
-        <module>yi-rest</module>
-        <module>auth-service</module>
+        <module>yi-boot</module>
+        <module>yi-basic</module>
+        <module>yi-business</module>
     </modules>
 
     <properties>
