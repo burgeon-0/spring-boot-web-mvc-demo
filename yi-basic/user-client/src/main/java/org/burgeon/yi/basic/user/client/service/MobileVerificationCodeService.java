@@ -2,7 +2,6 @@ package org.burgeon.yi.basic.user.client.service;
 
 import org.burgeon.yi.basic.user.client.dto.request.MobileVerificationCodeCheckRequest;
 import org.burgeon.yi.basic.user.client.dto.request.MobileVerificationCodeSendRequest;
-import org.burgeon.yi.basic.user.client.dto.response.MobileVerificationCodeResponse;
 import org.burgeon.yi.boot.definition.exception.BusinessException;
 import org.burgeon.yi.boot.definition.exception.ParamException;
 

@@ -1,16 +1,16 @@
-require(['s-config', 'lr-validator'], function(config, validator) {
+require(["c-conf", "c-lr"], function(conf, lr) {
 
     "use strict";
 
     $("#get-code").click(function(event) {
         event.preventDefault();
-        validator.checkMobile();
+        if (!lr.checkMobile()) return;
     });
 
     $("#register").click(function(event) {
         event.preventDefault();
-        validator.checkMobile();
-        validator.checkCode();
+        if (!lr.checkMobile()) return;
+        if (!lr.checkCode()) return;
     });
 
 });

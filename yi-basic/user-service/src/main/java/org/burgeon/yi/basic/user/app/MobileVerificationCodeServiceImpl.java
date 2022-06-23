@@ -3,7 +3,6 @@ package org.burgeon.yi.basic.user.app;
 import lombok.extern.slf4j.Slf4j;
 import org.burgeon.yi.basic.user.client.dto.request.MobileVerificationCodeCheckRequest;
 import org.burgeon.yi.basic.user.client.dto.request.MobileVerificationCodeSendRequest;
-import org.burgeon.yi.basic.user.client.dto.response.MobileVerificationCodeResponse;
 import org.burgeon.yi.basic.user.client.service.MobileVerificationCodeService;
 import org.burgeon.yi.boot.definition.exception.BusinessException;
 import org.burgeon.yi.boot.definition.exception.ParamException;
@@ -20,7 +19,7 @@ public class MobileVerificationCodeServiceImpl implements MobileVerificationCode
     @Override
     public void sendMobileVerificationCode(MobileVerificationCodeSendRequest request) throws ParamException, BusinessException {
         log.info("SendMobileVerificationCode => mobile: {}, verificationCodeType: {}", request.getMobile(), request.getVerificationCodeType());
-
+        log.info("SendMobileVerificationCode => verificationCode: {}", "888888");
     }
 
     @Override

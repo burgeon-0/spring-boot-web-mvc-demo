@@ -20,23 +20,27 @@ define([], function() {
             if ($("#mobile").val() == "") {
                 $("#mobile").addClass("is-invalid");
                 $("#mobile-feedback").text("请输入手机号！");
-                return;
+                return false;
             }
             if (!regMobile.test($("#mobile").val())) {
                  $("#mobile").addClass("is-invalid");
                  $("#mobile-feedback").text("手机号格式不正确！");
+                 return false;
             }
+            return true;
         },
         checkCode: function() {
             if ($("#code").val() == "") {
                 $("#code").addClass("is-invalid");
                 $("#code-feedback").text("请输入验证码！");
-                return;
+                return false;
             }
             if (!regCode.test($("#code").val())) {
                  $("#code").addClass("is-invalid");
                  $("#code-feedback").text("验证码格式不正确！");
+                 return false;
             }
+            return true;
         }
     };
 
