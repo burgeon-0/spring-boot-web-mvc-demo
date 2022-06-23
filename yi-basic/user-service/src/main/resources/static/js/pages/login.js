@@ -1,19 +1,16 @@
-(function($) {
+require(['s-config', 'lr-validator'], function(config, validator) {
 
     "use strict";
 
     $("#get-code").click(function(event) {
         event.preventDefault();
-        $.formValidator.checkMobile();
-
-        console.log($.webConfig.hostUserService);
-        console.log($.webConfig.uriMobileVerificationCode);
+        validator.checkMobile();
     });
 
     $("#login").click(function(event) {
         event.preventDefault();
-        $.formValidator.checkMobile();
-        $.formValidator.checkCode();
+        validator.checkMobile();
+        validator.checkCode();
     });
 
-})(jQuery);
+});
