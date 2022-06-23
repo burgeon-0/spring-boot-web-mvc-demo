@@ -6,12 +6,12 @@ import org.burgeon.yi.boot.definition.exception.BusinessException;
 import org.burgeon.yi.boot.definition.exception.ParamException;
 
 /**
- * 登录服务
+ * 登录-注册服务
  *
  * @author Sam Lu
  * @date 2022/06/21
  */
-public interface LoginService {
+public interface LoginRegisterService {
 
     /**
      * 通过手机验证码登录

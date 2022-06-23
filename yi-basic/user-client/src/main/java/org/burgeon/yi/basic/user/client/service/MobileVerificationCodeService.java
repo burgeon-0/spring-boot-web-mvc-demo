@@ -1,6 +1,7 @@
 package org.burgeon.yi.basic.user.client.service;
 
 import org.burgeon.yi.basic.user.client.dto.request.MobileVerificationCodeCheckRequest;
+import org.burgeon.yi.basic.user.client.dto.request.MobileVerificationCodeSendRequest;
 import org.burgeon.yi.basic.user.client.dto.response.MobileVerificationCodeResponse;
 import org.burgeon.yi.boot.definition.exception.BusinessException;
 import org.burgeon.yi.boot.definition.exception.ParamException;
@@ -14,15 +15,13 @@ import org.burgeon.yi.boot.definition.exception.ParamException;
 public interface MobileVerificationCodeService {
 
     /**
-     * 获取手机验证码
+     * 发送手机验证码
      *
-     * @param mobile 手机
-     * @param verificationCodeType 验证码类型
-     * @return 手机验证码返回信息
+     * @param request 发送请求
      * @throws ParamException 参数异常
      * @throws BusinessException 业务异常
      */
-    MobileVerificationCodeResponse getMobileVerificationCode(String mobile, String verificationCodeType) throws ParamException, BusinessException;
+    void sendMobileVerificationCode(MobileVerificationCodeSendRequest request) throws ParamException, BusinessException;
 
     /**
      * 验证手机验证码

@@ -2,6 +2,7 @@ package org.burgeon.yi.basic.user.app;
 
 import lombok.extern.slf4j.Slf4j;
 import org.burgeon.yi.basic.user.client.dto.request.MobileVerificationCodeCheckRequest;
+import org.burgeon.yi.basic.user.client.dto.request.MobileVerificationCodeSendRequest;
 import org.burgeon.yi.basic.user.client.dto.response.MobileVerificationCodeResponse;
 import org.burgeon.yi.basic.user.client.service.MobileVerificationCodeService;
 import org.burgeon.yi.boot.definition.exception.BusinessException;
@@ -17,13 +18,14 @@ import org.springframework.stereotype.Service;
 public class MobileVerificationCodeServiceImpl implements MobileVerificationCodeService {
 
     @Override
-    public MobileVerificationCodeResponse getMobileVerificationCode(String mobile, String verificationCodeType) throws ParamException, BusinessException {
-        log.info("mobile: {}, verificationCodeType: {}", mobile, verificationCodeType);
-        return null;
+    public void sendMobileVerificationCode(MobileVerificationCodeSendRequest request) throws ParamException, BusinessException {
+        log.info("SendMobileVerificationCode => mobile: {}, verificationCodeType: {}", request.getMobile(), request.getVerificationCodeType());
+
     }
 
     @Override
     public void checkMobileVerificationCode(MobileVerificationCodeCheckRequest request) throws ParamException, BusinessException {
+        log.info("CheckMobileVerificationCode => mobile: {}, verificationCode: {}, verificationCodeType: {}", request.getMobile(), request.getVerificationCode(), request.getVerificationCodeType());
 
     }
 
