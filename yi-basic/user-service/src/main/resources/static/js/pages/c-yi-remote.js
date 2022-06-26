@@ -9,8 +9,10 @@ define(["c-remote", "c-code"], function(remote, codeMap) {
                 console.log("code: " + response.code);
                 console.log("message: " + response.message);
                 console.log("data: " + response.data);
+
                 success(response.data);
             };
+
             var yiError = function(xhr, ajaxOptions, thrownError) {
                 console.log("error => ");
                 console.log("readyState: " + xhr.readyState);
@@ -25,6 +27,7 @@ define(["c-remote", "c-code"], function(remote, codeMap) {
                 message != undefined ? message : xhr.status < 500 ? "未知异常！" : "服务器错误！";
                 error(xhr.status, code, message);
             };
+
             remote.post(host, uri, body, yiSuccess, yiError);
         }
     };

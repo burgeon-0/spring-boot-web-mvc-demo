@@ -1,4 +1,4 @@
-define([], function() {
+define(["c-conf", "c-yi-remote"], function(conf, yiRemote) {
 
     "use strict";
 
@@ -51,6 +51,36 @@ define([], function() {
                  return false;
             }
             return true;
+        },
+        sendCode: function(type, condition, init, completed) {
+            event.preventDefault();
+            if (!condition()) return;
+            this.removeErrorMessage();
+            if (!this.checkMobile()) return;
+
+            init();
+            yiRemote.post(conf.hostUserService, conf.uriMobileVerificationCode, {
+                mobile: $("#mobile").val(),
+                type: type
+            }, function(data) {
+                var seconds = 60;
+                $("#send-code").text(seconds-- + "s");
+                $("#send-code").addClass("disabled");
+                var timer = setInterval(function() {
+                    if (seconds > 0) {
+                        $("#send-code").text(seconds-- + "s");
+                    } else {
+                        $("#send-code").text("发送验证码");
+                        $("#send-code").removeClass("disabled");
+                        clearInterval(timer);
+                        completed();
+                    }
+                }, 1000);
+            }, function(status, code, message) {
+                $("#mobile").addClass("is-invalid");
+                $("#mobile-feedback").text(message);
+                completed();
+            });
         }
     };
 

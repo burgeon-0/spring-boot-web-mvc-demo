@@ -15,6 +15,7 @@ define([], function() {
                     console.log("thrownError: " + thrownError);
                 };
             }
+
             $.ajax({
                 method: "POST",
                 url: host + uri,
