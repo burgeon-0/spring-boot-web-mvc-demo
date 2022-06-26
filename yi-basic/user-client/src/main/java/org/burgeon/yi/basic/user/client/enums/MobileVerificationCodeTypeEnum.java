@@ -9,11 +9,12 @@ package org.burgeon.yi.basic.user.client.enums;
 public enum MobileVerificationCodeTypeEnum {
 
     /**
-     * 手机验证码类型
+     * 登录
      */
-    // 登录
     LOGIN,
-    // 注册
+    /**
+     * 注册
+     */
     REGISTER
 
 }

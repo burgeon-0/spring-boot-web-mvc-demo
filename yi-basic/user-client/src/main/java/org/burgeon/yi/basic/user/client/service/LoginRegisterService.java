@@ -2,8 +2,7 @@ package org.burgeon.yi.basic.user.client.service;
 
 import org.burgeon.yi.basic.user.client.dto.request.LoginByMobileVerificationCodeRequest;
 import org.burgeon.yi.basic.user.client.dto.request.RegisterByMobileVerificationCodeRequest;
-import org.burgeon.yi.boot.definition.exception.BusinessException;
-import org.burgeon.yi.boot.definition.exception.ParamException;
+import org.burgeon.yi.boot.definition.exception.ValidationException;
 
 /**
  * 登录-注册服务
@@ -19,19 +18,17 @@ public interface LoginRegisterService {
      * @param request 登录请求
      * @param request
      * @return 登录结果
-     * @throws ParamException 参数异常
-     * @throws BusinessException 业务异常
+     * @throws ValidationException 校验异常
      */
-    void loginByMobileVerificationCode(LoginByMobileVerificationCodeRequest request) throws ParamException, BusinessException;
+    void loginByMobileVerificationCode(LoginByMobileVerificationCodeRequest request) throws ValidationException;
 
     /**
      * 通过手机验证码注册
      *
      * @param request 注册请求
      * @return 注册结果
-     * @throws ParamException 参数异常
-     * @throws BusinessException 业务异常
+     * @throws ValidationException 校验异常
      */
-    void registerByMobileVerificationCode(RegisterByMobileVerificationCodeRequest request) throws ParamException, BusinessException;
+    void registerByMobileVerificationCode(RegisterByMobileVerificationCodeRequest request) throws ValidationException;
 
 }

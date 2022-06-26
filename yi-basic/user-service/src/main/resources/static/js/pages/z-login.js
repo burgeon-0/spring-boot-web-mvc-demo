@@ -1,4 +1,4 @@
-require(["c-conf", "c-lr"], function(conf, lr) {
+require(["c-conf", "c-lr", "c-remote"], function(conf, lr, remote) {
 
     "use strict";
 
@@ -6,18 +6,11 @@ require(["c-conf", "c-lr"], function(conf, lr) {
         event.preventDefault();
         if (!lr.checkMobile()) return;
 
-        var data = {
+        remote.post(conf.hostUserService, conf.uriMobileVerificationCode, {
             mobile: $("#mobile").val(),
-            verificationCodeType: "LOGIN"
-        };
-        $.ajax({
-            method: "POST",
-            url: conf.hostUserService + conf.uriMobileVerificationCode,
-            contentType: "application/json; charset=utf-8",
-            data: JSON.stringify(data),
-            success: function(data) {
-                console.log(data);
-            }
+            type: "LOGIN"
+        }, function(data) {
+            console.log(data);
         });
     });
 
@@ -25,6 +18,13 @@ require(["c-conf", "c-lr"], function(conf, lr) {
         event.preventDefault();
         if (!lr.checkMobile()) return;
         if (!lr.checkCode()) return;
+
+        remote.post(conf.hostUserService, conf.uriLoginMobile, {
+            mobile: $("#mobile").val(),
+            code: $("#code").val()
+        }, function(data) {
+            console.log(data);
+        });
     });
 
 });

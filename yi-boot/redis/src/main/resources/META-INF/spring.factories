@@ -1,0 +1,4 @@
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  org.burgeon.yi.boot.redis.RedisCacheFactory,\
+  org.burgeon.yi.boot.redis.RedisProperties

@@ -15,7 +15,7 @@ define([], function() {
     var regMobile = /^1[3-9]\d{9}$/;
     var regCode = /^\d{6}$/;
 
-    var validator = {
+    var lr = {
         checkMobile: function() {
             if ($("#mobile").val() == "") {
                 $("#mobile").addClass("is-invalid");
@@ -44,6 +44,6 @@ define([], function() {
         }
     };
 
-    return validator;
+    return lr;
 
 });

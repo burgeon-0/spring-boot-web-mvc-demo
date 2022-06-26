@@ -25,9 +25,15 @@
     </modules>
 
     <properties>
-        <yi.basic.user.client.version>1.0.0-SNAPSHOT</yi.basic.user.client.version>
-        <yi.boot.definition.version>1.0.0-SNAPSHOT</yi.boot.definition.version>
+        <yi-basic-user-client.version>1.0.0-SNAPSHOT</yi-basic-user-client.version>
+        <yi-boot-common.version>1.0.0-SNAPSHOT</yi-boot-common.version>
+        <yi-boot-definition.version>1.0.0-SNAPSHOT</yi-boot-definition.version>
+        <yi-boot-redis.version>1.0.0-SNAPSHOT</yi-boot-redis.version>
+        <redisson-spring-boot-starter.version>3.17.4</redisson-spring-boot-starter.version>
         <lombok.version>1.18.24</lombok.version>
+        <hutool-all.version>5.7.22</hutool-all.version>
+        <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
+        <validation-api.version>2.0.1.Final</validation-api.version>
     </properties>
 
     <distributionManagement>
@@ -44,18 +50,54 @@
             <dependency>
                 <groupId>org.burgeon</groupId>
                 <artifactId>yi-basic-user-client</artifactId>
-                <version>${yi.basic.user.client.version}</version>
+                <version>${yi-basic-user-client.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.burgeon</groupId>
+                <artifactId>yi-boot-common</artifactId>
+                <version>${yi-boot-common.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.burgeon</groupId>
                 <artifactId>yi-boot-definition</artifactId>
-                <version>${yi.boot.definition.version}</version>
+                <version>${yi-boot-definition.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.burgeon</groupId>
+                <artifactId>yi-boot-redis</artifactId>
+                <version>${yi-boot-redis.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson-spring-boot-starter.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool-all.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${org.mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>${org.mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>${validation-api.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

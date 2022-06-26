@@ -19,7 +19,9 @@
     <description>Yi Boot</description>
 
     <modules>
+        <module>common</module>
         <module>definition</module>
+        <module>redis</module>
     </modules>
 
 </project>

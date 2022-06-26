@@ -1,7 +1,12 @@
 package org.burgeon.yi.basic.user.client.dto.request;
 
 import lombok.Data;
+import org.burgeon.yi.basic.user.client.constant.Constants;
 import org.burgeon.yi.basic.user.client.enums.MobileVerificationCodeTypeEnum;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 /**
  * 发送手机验证码
@@ -15,11 +20,14 @@ public class MobileVerificationCodeSendRequest {
     /**
      * 手机
      */
+    @NotBlank
+    @Pattern(regexp = Constants.REG_MOBILE)
     private String mobile;
 
     /**
-     * 手机验证码类型
+     * 验证码类型
      */
-    private MobileVerificationCodeTypeEnum verificationCodeType;
+    @NotNull
+    private MobileVerificationCodeTypeEnum type;
 
 }
