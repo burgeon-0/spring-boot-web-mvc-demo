@@ -48,8 +48,8 @@ require(["c-conf", "c-lr", "c-yi-remote"], function(conf, lr, yiRemote) {
             mobile: $("#mobile").val(),
             code: $("#code").val()
         }, function(data) {
-            console.log(data);
             blockLogin = false;
+            window.location.href = data;
         }, function(status, code, message) {
             $("#code").addClass("is-invalid");
             $("#code-feedback").text(message);

@@ -25,14 +25,7 @@ define(["c-remote", "c-code"], function(remote, codeMap) {
                 message != undefined ? message : xhr.status < 500 ? "未知异常！" : "服务器错误！";
                 error(xhr.status, code, message);
             };
-            $.ajax({
-                method: "POST",
-                url: host + uri,
-                contentType: "application/json; charset=utf-8",
-                data: JSON.stringify(body),
-                success: yiSuccess,
-                error: yiError
-            });
+            remote.post(host, uri, body, yiSuccess, yiError);
         }
     };
 

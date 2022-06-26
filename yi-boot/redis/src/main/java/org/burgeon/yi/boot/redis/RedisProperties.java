@@ -10,6 +10,9 @@ import org.springframework.beans.factory.annotation.Value;
 @Getter
 public class RedisProperties {
 
+    /**
+     * RedisKey前缀
+     */
     @Value("${app.config.redis.projectKeyPrefix:org.burgeon.yi.boot.redis}")
     private String redisProjectKeyPrefix;
 

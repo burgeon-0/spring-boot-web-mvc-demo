@@ -18,17 +18,19 @@ public interface LoginRegisterService {
      * @param request 登录请求
      * @param request
      * @return 登录结果
+     * @return 登录成功的跳转地址
      * @throws ValidationException 校验异常
      */
-    void loginByMobileVerificationCode(LoginByMobileVerificationCodeRequest request) throws ValidationException;
+    String loginByMobileVerificationCode(LoginByMobileVerificationCodeRequest request) throws ValidationException;
 
     /**
      * 通过手机验证码注册
      *
      * @param request 注册请求
      * @return 注册结果
+     * @return 注册成功的跳转地址
      * @throws ValidationException 校验异常
      */
-    void registerByMobileVerificationCode(RegisterByMobileVerificationCodeRequest request) throws ValidationException;
+    String registerByMobileVerificationCode(RegisterByMobileVerificationCodeRequest request) throws ValidationException;
 
 }

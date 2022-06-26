@@ -30,8 +30,7 @@ public class LoginRegisterController {
      */
     @PostMapping("/cgi/login/mobile")
     public Response loginByMobileVerificationCode(@Validated @RequestBody LoginByMobileVerificationCodeRequest request) {
-        loginRegisterService.loginByMobileVerificationCode(request);
-        return Response.success();
+        return Response.success(loginRegisterService.loginByMobileVerificationCode(request));
     }
 
     /**
@@ -42,8 +41,7 @@ public class LoginRegisterController {
      */
     @PostMapping("/cgi/register/mobile")
     public Response registerByMobileVerificationCode(@Validated @RequestBody RegisterByMobileVerificationCodeRequest request) {
-        loginRegisterService.registerByMobileVerificationCode(request);
-        return Response.success();
+        return Response.success(loginRegisterService.registerByMobileVerificationCode(request));
     }
 
 }
