@@ -13,7 +13,7 @@ public interface ErrorEnum {
      *
      * @return
      */
-    int getCode();
+    String getCode();
 
     /**
      * 获取错误信息

@@ -3,7 +3,7 @@ package org.burgeon.yi.basic.user.adapter.cgi;
 import lombok.RequiredArgsConstructor;
 import org.burgeon.yi.basic.user.client.dto.request.MobileVerificationCodeSendRequest;
 import org.burgeon.yi.basic.user.client.service.MobileVerificationCodeService;
-import org.burgeon.yi.boot.definition.web.Result;
+import org.burgeon.yi.boot.definition.rest.Response;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,9 +28,9 @@ public class MobileVerificationCodeController {
      * @return 手机验证码返回信息
      */
     @PostMapping("/cgi/mobile-verification-codes")
-    public Result sendMobileVerificationCode(@Validated @RequestBody MobileVerificationCodeSendRequest request) {
+    public Response sendMobileVerificationCode(@Validated @RequestBody MobileVerificationCodeSendRequest request) {
         mobileVerificationCodeService.sendMobileVerificationCode(request);
-        return Result.success();
+        return Response.success();
     }
 
 }

@@ -23,13 +23,13 @@ public enum UserServiceErrorEnum implements ErrorEnum {
     /**
      * 手机验证码不存在或已过期
      */
-    MOBILE_VERIFICATION_CODE_NOT_EXIST_OR_EXPIRED(01001, "MobileVerificationCode not exist or expired."),
+    MOBILE_VERIFICATION_CODE_NOT_EXIST_OR_EXPIRED("0101001", "MobileVerificationCode not exist or expired."),
     /**
      * 手机验证码不正确
      */
-    MOBILE_VERIFICATION_CODE_INVALID(01002, "MobileVerificationCode invalid.");
+    MOBILE_VERIFICATION_CODE_INVALID("0101002", "MobileVerificationCode invalid.");
 
-    UserServiceErrorEnum(int code, String message) {
+    UserServiceErrorEnum(String code, String message) {
         this.code = code;
         this.message = message;
     }
@@ -38,7 +38,7 @@ public enum UserServiceErrorEnum implements ErrorEnum {
      * 错误码
      */
     @Getter
-    private int code;
+    private String code;
 
     /**
      * 错误信息

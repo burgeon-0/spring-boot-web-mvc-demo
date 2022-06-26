@@ -2,6 +2,10 @@ define([], function() {
 
     "use strict";
 
+    $(function() {
+        $("#send-code").width($("#send-code").width());
+    });
+
     $("#mobile").focus(function(event) {
         $("#mobile").removeClass("is-invalid");
         $("#mobile-feedback").text("");
@@ -16,6 +20,12 @@ define([], function() {
     var regCode = /^\d{6}$/;
 
     var lr = {
+        removeErrorMessage: function() {
+            $("#mobile").removeClass("is-invalid");
+            $("#mobile-feedback").text("");
+            $("#code").removeClass("is-invalid");
+            $("#code-feedback").text("");
+        },
         checkMobile: function() {
             if ($("#mobile").val() == "") {
                 $("#mobile").addClass("is-invalid");

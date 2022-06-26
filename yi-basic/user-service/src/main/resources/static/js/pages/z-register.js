@@ -2,7 +2,7 @@ require(["c-conf", "c-lr"], function(conf, lr) {
 
     "use strict";
 
-    $("#get-code").click(function(event) {
+    $("#send-code").click(function(event) {
         event.preventDefault();
         if (!lr.checkMobile()) return;
     });

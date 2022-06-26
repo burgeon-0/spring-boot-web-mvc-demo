@@ -14,7 +14,7 @@ public class ValidationException extends RuntimeException {
      * 错误码
      */
     @Getter
-    private int code;
+    private String code;
 
     /**
      * 错误信息
@@ -27,7 +27,7 @@ public class ValidationException extends RuntimeException {
         this.message = error.getMessage();
     }
 
-    public ValidationException(int code, String message) {
+    public ValidationException(String code, String message) {
         this.code = code;
         this.message = message;
     }

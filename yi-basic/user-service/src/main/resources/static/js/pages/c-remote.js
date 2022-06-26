@@ -3,7 +3,7 @@ define([], function() {
     "use strict";
 
     var remote = {
-        post: function(host, uri, data, success, error) {
+        post: function(host, uri, body, success, error) {
             if (error == undefined) {
                 error = function(xhr, ajaxOptions, thrownError) {
                     console.log("error => ");
@@ -19,7 +19,7 @@ define([], function() {
                 method: "POST",
                 url: host + uri,
                 contentType: "application/json; charset=utf-8",
-                data: JSON.stringify(data),
+                data: JSON.stringify(body),
                 success: success,
                 error: error
             });

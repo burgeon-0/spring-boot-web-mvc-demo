@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.burgeon.yi.basic.user.client.dto.request.LoginByMobileVerificationCodeRequest;
 import org.burgeon.yi.basic.user.client.dto.request.RegisterByMobileVerificationCodeRequest;
 import org.burgeon.yi.basic.user.client.service.LoginRegisterService;
-import org.burgeon.yi.boot.definition.web.Result;
+import org.burgeon.yi.boot.definition.rest.Response;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,9 +29,9 @@ public class LoginRegisterController {
      * @return 登录结果
      */
     @PostMapping("/cgi/login/mobile")
-    public Result loginByMobileVerificationCode(@Validated @RequestBody LoginByMobileVerificationCodeRequest request) {
+    public Response loginByMobileVerificationCode(@Validated @RequestBody LoginByMobileVerificationCodeRequest request) {
         loginRegisterService.loginByMobileVerificationCode(request);
-        return Result.success();
+        return Response.success();
     }
 
     /**
@@ -41,9 +41,9 @@ public class LoginRegisterController {
      * @return 注册结果
      */
     @PostMapping("/cgi/register/mobile")
-    public Result registerByMobileVerificationCode(@Validated @RequestBody RegisterByMobileVerificationCodeRequest request) {
+    public Response registerByMobileVerificationCode(@Validated @RequestBody RegisterByMobileVerificationCodeRequest request) {
         loginRegisterService.registerByMobileVerificationCode(request);
-        return Result.success();
+        return Response.success();
     }
 
 }
