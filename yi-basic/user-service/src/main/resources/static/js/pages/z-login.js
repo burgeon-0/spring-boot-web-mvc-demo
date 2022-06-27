@@ -1,35 +1,30 @@
-require(["c-conf", "c-lr", "c-yi-remote"], function(conf, lr, yiRemote) {
+require(["c-conf", "c-lr", "c-yi-remote", "c-lock"], function(conf, cLr, yiRemote, cLock) {
 
     "use strict";
 
-    var blockSendCode = false;
+    var lr = new cLr();
+
     $("#send-code").click(function(event) {
-        lr.sendCode("LOGIN", function() {
-            return !blockSendCode;
-        }, function() {
-            blockSendCode = true;
-        }, function() {
-            blockSendCode = false;
-        });
+        lr.sendCode("LOGIN");
     });
 
-    var blockLogin = false;
+    var lock = new cLock();
     $("#login").click(function(event) {
         event.preventDefault();
         if (!lr.checkMobile()) return;
         if (!lr.checkCode()) return;
 
-        blockLogin = true;
+        if (!lock.tryLock()) return;
         yiRemote.post(conf.hostUserService, conf.uriLoginMobile, {
             mobile: $("#mobile").val(),
             code: $("#code").val()
         }, function(data) {
-            blockLogin = false;
+            lock.release();
             window.location.href = data;
         }, function(status, code, message) {
             $("#code").addClass("is-invalid");
             $("#code-feedback").text(message);
-            blockLogin = false;
+            lock.release();
         });
     });
 

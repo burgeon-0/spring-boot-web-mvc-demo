@@ -1,4 +1,4 @@
-define(["c-conf", "c-yi-remote"], function(conf, yiRemote) {
+define(["c-conf", "c-yi-remote", "c-lock"], function(conf, yiRemote, cLock) {
 
     "use strict";
 
@@ -19,14 +19,15 @@ define(["c-conf", "c-yi-remote"], function(conf, yiRemote) {
     var regMobile = /^1[3-9]\d{9}$/;
     var regCode = /^\d{6}$/;
 
-    var lr = {
-        removeErrorMessage: function() {
+    var lr = function() {
+        this.lock = new cLock();
+        this.removeErrorMessage = function() {
             $("#mobile").removeClass("is-invalid");
             $("#mobile-feedback").text("");
             $("#code").removeClass("is-invalid");
             $("#code-feedback").text("");
-        },
-        checkMobile: function() {
+        };
+        this.checkMobile = function() {
             if ($("#mobile").val() == "") {
                 $("#mobile").addClass("is-invalid");
                 $("#mobile-feedback").text("请输入手机号！");
@@ -38,8 +39,8 @@ define(["c-conf", "c-yi-remote"], function(conf, yiRemote) {
                  return false;
             }
             return true;
-        },
-        checkCode: function() {
+        };
+        this.checkCode = function() {
             if ($("#code").val() == "") {
                 $("#code").addClass("is-invalid");
                 $("#code-feedback").text("请输入验证码！");
@@ -51,14 +52,13 @@ define(["c-conf", "c-yi-remote"], function(conf, yiRemote) {
                  return false;
             }
             return true;
-        },
-        sendCode: function(type, condition, init, completed) {
+        };
+        this.sendCode = function(type) {
             event.preventDefault();
-            if (!condition()) return;
             this.removeErrorMessage();
             if (!this.checkMobile()) return;
 
-            init();
+            if (!this.lock.tryLock()) return;
             yiRemote.post(conf.hostUserService, conf.uriMobileVerificationCode, {
                 mobile: $("#mobile").val(),
                 type: type
@@ -73,15 +73,15 @@ define(["c-conf", "c-yi-remote"], function(conf, yiRemote) {
                         $("#send-code").text("发送验证码");
                         $("#send-code").removeClass("disabled");
                         clearInterval(timer);
-                        completed();
+                        this.lock.release();
                     }
                 }, 1000);
             }, function(status, code, message) {
                 $("#mobile").addClass("is-invalid");
                 $("#mobile-feedback").text(message);
-                completed();
+                this.lock.release();
             });
-        }
+        };
     };
 
     return lr;

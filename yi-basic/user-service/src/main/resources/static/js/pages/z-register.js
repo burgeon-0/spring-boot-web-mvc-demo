@@ -1,6 +1,12 @@
-require(["c-conf", "c-lr", "c-yi-remote"], function(conf, lr, yiRemote) {
+require(["c-conf", "c-lr", "c-yi-remote", "c-lock"], function(conf, cLr, yiRemote, cLock) {
 
     "use strict";
+
+    var lr = new cLr();
+
+    $("#send-code").click(function(event) {
+        lr.sendCode("REGISTER");
+    });
 
     $("#agreeTerms").click(function(event) {
         if ($("#agreeTerms").is(":checked")) {
@@ -12,18 +18,7 @@ require(["c-conf", "c-lr", "c-yi-remote"], function(conf, lr, yiRemote) {
         }
     });
 
-    var blockSendCode = false;
-    $("#send-code").click(function(event) {
-        lr.sendCode("REGISTER", function() {
-            return !blockSendCode;
-        }, function() {
-            blockSendCode = true;
-        }, function() {
-            blockSendCode = false;
-        });
-    });
-
-    var blockRegister = false;
+    var lock = new cLock();
     $("#register").click(function(event) {
         event.preventDefault();
         if (!lr.checkMobile()) return;
@@ -35,17 +30,17 @@ require(["c-conf", "c-lr", "c-yi-remote"], function(conf, lr, yiRemote) {
             return;
         }
 
-        blockRegister = true;
+        if (!lock.tryLock()) return;
         yiRemote.post(conf.hostUserService, conf.uriRegisterMobile, {
             mobile: $("#mobile").val(),
             code: $("#code").val()
         }, function(data) {
-            blockRegister = false;
+            lock.release();
             window.location.href = data;
         }, function(status, code, message) {
             $("#code").addClass("is-invalid");
             $("#code-feedback").text(message);
-            blockRegister = false;
+            lock.release();
         });
     });
 
