@@ -1,5 +1,9 @@
 package org.burgeon.yi.basic.user.client.service;
 
+import org.burgeon.yi.basic.user.client.dto.request.LoginSendMobileCaptchaRequest;
+import org.burgeon.yi.basic.user.client.dto.request.RegisterByMobileCaptchaRequest;
+import org.burgeon.yi.basic.user.client.dto.request.RegisterSendMobileCaptchaRequest;
+
 /**
  * 注册服务
  *
@@ -11,16 +15,16 @@ public interface RegisterService {
     /**
      * 发送注册验证码
      *
-     * @param mobile 手机号
+     * @param request 发送验证码请求
      */
-    void sendMobileCaptcha(String mobile);
+    void sendMobileCaptcha(RegisterSendMobileCaptchaRequest request);
 
     /**
      * 通过手机验证码注册
      *
-     * @param mobile 手机号
-     * @param code 手机验证码
+     * @param request 注册请求
+     * @return 注册成功的跳转地址
      */
-    String registerByMobileCaptcha(String mobile, String code);
+    String registerByMobileCaptcha(RegisterByMobileCaptchaRequest request);
 
 }

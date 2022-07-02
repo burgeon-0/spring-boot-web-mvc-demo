@@ -2,6 +2,8 @@ package org.burgeon.yi.basic.user.app.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.burgeon.yi.basic.user.client.dto.request.RegisterByMobileCaptchaRequest;
+import org.burgeon.yi.basic.user.client.dto.request.RegisterSendMobileCaptchaRequest;
 import org.burgeon.yi.basic.user.client.service.RegisterService;
 import org.burgeon.yi.basic.user.domain.login.AggRegisterLauncher;
 import org.springframework.beans.factory.annotation.Value;
@@ -25,13 +27,13 @@ public class RegisterServiceImpl implements RegisterService {
     private String registerDefaultRedirectUrl;
 
     @Override
-    public void sendMobileCaptcha(String mobile) {
-        aggRegisterLauncher.sendMobileCaptcha(mobile);
+    public void sendMobileCaptcha(RegisterSendMobileCaptchaRequest request) {
+        aggRegisterLauncher.sendMobileCaptcha(request.getMobile());
     }
 
     @Override
-    public String registerByMobileCaptcha(String mobile, String code) {
-        aggRegisterLauncher.registerByMobileCaptcha(mobile, code);
+    public String registerByMobileCaptcha(RegisterByMobileCaptchaRequest request) {
+        aggRegisterLauncher.registerByMobileCaptcha(request.getMobile(), request.getCode());
         return registerDefaultRedirectUrl;
     }
 

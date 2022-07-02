@@ -2,6 +2,8 @@ package org.burgeon.yi.basic.user.app.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.burgeon.yi.basic.user.client.dto.request.LoginByMobileCaptchaRequest;
+import org.burgeon.yi.basic.user.client.dto.request.LoginSendMobileCaptchaRequest;
 import org.burgeon.yi.basic.user.client.service.LoginService;
 import org.burgeon.yi.basic.user.domain.login.AggLoginLauncher;
 import org.springframework.beans.factory.annotation.Value;
@@ -25,13 +27,13 @@ public class LoginServiceImpl implements LoginService {
     private String loginDefaultRedirectUrl;
 
     @Override
-    public void sendMobileCaptcha(String mobile) {
-        aggLoginLauncher.sendMobileCaptcha(mobile);
+    public void sendMobileCaptcha(LoginSendMobileCaptchaRequest request) {
+        aggLoginLauncher.sendMobileCaptcha(request.getMobile());
     }
 
     @Override
-    public String loginByMobileCaptcha(String mobile, String code) {
-        aggLoginLauncher.loginByMobileCaptcha(mobile, code);
+    public String loginByMobileCaptcha(LoginByMobileCaptchaRequest request) {
+        aggLoginLauncher.loginByMobileCaptcha(request.getMobile(), request.getCode());
         return loginDefaultRedirectUrl;
     }
 

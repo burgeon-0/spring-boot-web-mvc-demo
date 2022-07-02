@@ -30,7 +30,7 @@ public class LoginController {
      */
     @PostMapping("/cgi/login/actions/send-mobile-captcha")
     public Response sendMobileCaptcha(@Validated @RequestBody LoginSendMobileCaptchaRequest request) {
-        loginService.sendMobileCaptcha(request.getMobile());
+        loginService.sendMobileCaptcha(request);
         return Response.success();
     }
 
@@ -42,7 +42,7 @@ public class LoginController {
      */
     @PostMapping("/cgi/login/mobile")
     public Response<String> loginByMobileCaptcha(@Validated @RequestBody LoginByMobileCaptchaRequest request) {
-        String url = loginService.loginByMobileCaptcha(request.getMobile(), request.getCode());
+        String url = loginService.loginByMobileCaptcha(request);
         return Response.success(url);
     }
 

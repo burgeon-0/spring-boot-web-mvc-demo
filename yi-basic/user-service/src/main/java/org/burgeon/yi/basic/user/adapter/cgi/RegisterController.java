@@ -30,7 +30,7 @@ public class RegisterController {
      */
     @PostMapping("/cgi/register/actions/send-mobile-captcha")
     public Response sendMobileCaptcha(@Validated @RequestBody RegisterSendMobileCaptchaRequest request) {
-        registerService.sendMobileCaptcha(request.getMobile());
+        registerService.sendMobileCaptcha(request);
         return Response.success();
     }
 
@@ -42,7 +42,7 @@ public class RegisterController {
      */
     @PostMapping("/cgi/register/mobile")
     public Response<String> registerByMobileCaptcha(@Validated @RequestBody RegisterByMobileCaptchaRequest request) {
-        String url = registerService.registerByMobileCaptcha(request.getMobile(), request.getCode());
+        String url = registerService.registerByMobileCaptcha(request);
         return Response.success(url);
     }
 
