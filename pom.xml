@@ -20,6 +20,7 @@
 
     <modules>
         <module>yi-boot</module>
+        <module>yi-plugin</module>
         <module>yi-basic</module>
         <module>yi-business</module>
     </modules>
@@ -30,6 +31,8 @@
         <yi-boot-definition.version>1.0.0-SNAPSHOT</yi-boot-definition.version>
         <yi-boot-redis.version>1.0.0-SNAPSHOT</yi-boot-redis.version>
         <yi-boot-rest.version>1.0.0-SNAPSHOT</yi-boot-rest.version>
+        <yi-plugin-sms-definition.version>1.0.0-SNAPSHOT</yi-plugin-sms-definition.version>
+        <yi-plugin-sms-plugin.version>1.0.0-SNAPSHOT</yi-plugin-sms-plugin.version>
         <redisson-spring-boot-starter.version>3.17.4</redisson-spring-boot-starter.version>
         <lombok.version>1.18.24</lombok.version>
         <hutool-all.version>5.7.22</hutool-all.version>
@@ -72,6 +75,16 @@
                 <groupId>org.burgeon.yi</groupId>
                 <artifactId>yi-boot-rest</artifactId>
                 <version>${yi-boot-rest.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.burgeon.yi</groupId>
+                <artifactId>yi-plugin-sms-definition</artifactId>
+                <version>${yi-plugin-sms-definition.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.burgeon.yi</groupId>
+                <artifactId>yi-plugin-sms-plugin</artifactId>
+                <version>${yi-plugin-sms-plugin.version}</version>
             </dependency>
 
             <dependency>

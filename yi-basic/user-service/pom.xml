@@ -34,6 +34,10 @@
             <groupId>org.burgeon.yi</groupId>
             <artifactId>yi-boot-rest</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.burgeon.yi</groupId>
+            <artifactId>yi-plugin-sms-plugin</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>cn.hutool</groupId>

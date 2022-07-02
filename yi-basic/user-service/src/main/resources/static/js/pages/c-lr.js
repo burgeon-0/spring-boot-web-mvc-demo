@@ -58,10 +58,21 @@ define(["c-conf", "c-yi-remote", "c-lock"], function(conf, yiRemote, cLock) {
             this.removeErrorMessage();
             if (!this.checkMobile()) return;
 
+            var uri;
+            switch (type) {
+                case "LOGIN":
+                    uri = conf.uriLoginSendMobileCaptcha;
+                    break;
+                case "REGISTER":
+                    uri = conf.uriRegisterSendMobileCaptcha;
+                    break;
+                default:
+                    break;
+            }
+
             if (!this.lock.tryLock()) return;
-            yiRemote.post(conf.hostUserService, conf.uriMobileVerificationCode, {
-                mobile: $("#mobile").val(),
-                type: type
+            yiRemote.post(conf.hostUserService, uri, {
+                mobile: $("#mobile").val()
             }, function(data) {
                 var seconds = 60;
                 $("#send-code").text(seconds-- + "s");

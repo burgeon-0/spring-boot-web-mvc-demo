@@ -3,6 +3,8 @@ package org.burgeon.yi.boot.definition.exception;
 import java.util.Objects;
 
 /**
+ * 断言工具类
+ *
  * @author Sam Lu
  * @date 2022/06/25
  */

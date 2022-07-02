@@ -29,11 +29,7 @@ public class GlobalExceptionHandler {
     }
 
     private void logException(ValidationException ex, HttpServletRequest request, Response response) {
-        String uri = String.format("%s %s", request.getMethod(), request.getRequestURI());
-        log.warn("[Exception] [{}] => {}: {}, response: {}", uri,
-                ex.getClass().getSimpleName(),
-                ex.getMessage(),
-                response);
+        log.warn("[Exception] [{} {}] => response: {}", request.getMethod(), request.getRequestURI(), response);
     }
 
 }

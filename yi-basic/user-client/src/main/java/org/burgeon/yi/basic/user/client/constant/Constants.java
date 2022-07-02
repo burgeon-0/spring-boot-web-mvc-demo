@@ -14,6 +14,6 @@ public class Constants {
     /**
      * 手机验证码正则表达式
      */
-    public static final String REG_MOBILE_VERIFICATION_CODE = "^\\d{6}$";
+    public static final String REG_MOBILE_CAPTCHA = "^\\d{6}$";
 
 }

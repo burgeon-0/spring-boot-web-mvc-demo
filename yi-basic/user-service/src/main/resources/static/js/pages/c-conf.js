@@ -4,9 +4,10 @@ define([], function() {
 
     var config = {
         hostUserService: "http://localhost:8383",
-        uriMobileVerificationCode: "/cgi/mobile-verification-codes",
-        uriLoginMobile: "/cgi/login/mobile",
-        uriRegisterMobile: "/cgi/register/mobile"
+        uriLoginSendMobileCaptcha: "/cgi/login/actions/send-mobile-captcha",
+        uriLoginByMobileCaptcha: "/cgi/login/mobile",
+        uriRegisterSendMobileCaptcha: "/cgi/register/actions/send-mobile-captcha",
+        uriRegisterByMobileCaptcha: "/cgi/register/mobile"
     };
 
     return config;
