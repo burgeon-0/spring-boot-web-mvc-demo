@@ -1,4 +1,4 @@
-package org.burgeon.yi.boot.rest.config;
+package org.burgeon.yi.boot.rest.session;
 
 import org.apache.tomcat.util.http.Rfc6265CookieProcessor;
 import org.apache.tomcat.util.http.SameSiteCookies;

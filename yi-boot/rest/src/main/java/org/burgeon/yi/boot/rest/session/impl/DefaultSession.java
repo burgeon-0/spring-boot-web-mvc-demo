@@ -1,13 +1,12 @@
-package org.burgeon.yi.boot.rest.adapter.impl;
+package org.burgeon.yi.boot.rest.session.impl;
 
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.crypto.digest.MD5;
 import cn.hutool.json.JSONUtil;
-import org.burgeon.yi.boot.rest.adapter.Session;
+import org.burgeon.yi.boot.rest.session.Session;
 import org.burgeon.yi.boot.rest.utils.CookieUtils;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**

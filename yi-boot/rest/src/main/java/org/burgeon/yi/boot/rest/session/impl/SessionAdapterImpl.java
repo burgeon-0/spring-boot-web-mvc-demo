@@ -1,24 +1,18 @@
-package org.burgeon.yi.boot.rest.adapter.impl;
+package org.burgeon.yi.boot.rest.session.impl;
 
-import cn.hutool.core.util.RandomUtil;
 import cn.hutool.core.util.StrUtil;
-import cn.hutool.json.JSONUtil;
 import lombok.RequiredArgsConstructor;
 import org.burgeon.yi.boot.definition.cache.Cache;
 import org.burgeon.yi.boot.definition.cache.CacheFactory;
 import org.burgeon.yi.boot.definition.cache.CacheProperties;
-import org.burgeon.yi.boot.rest.adapter.Session;
-import org.burgeon.yi.boot.rest.adapter.SessionAdapter;
+import org.burgeon.yi.boot.rest.session.Session;
+import org.burgeon.yi.boot.rest.session.SessionAdapter;
 import org.burgeon.yi.boot.rest.utils.CookieUtils;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
 import java.util.UUID;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 
 /**

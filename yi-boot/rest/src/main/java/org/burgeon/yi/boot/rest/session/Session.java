@@ -1,12 +1,8 @@
-package org.burgeon.yi.boot.rest.adapter;
+package org.burgeon.yi.boot.rest.session;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 

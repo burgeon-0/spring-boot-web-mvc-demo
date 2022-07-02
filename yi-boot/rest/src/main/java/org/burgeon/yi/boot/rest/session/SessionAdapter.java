@@ -1,4 +1,4 @@
-package org.burgeon.yi.boot.rest.adapter;
+package org.burgeon.yi.boot.rest.session;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
