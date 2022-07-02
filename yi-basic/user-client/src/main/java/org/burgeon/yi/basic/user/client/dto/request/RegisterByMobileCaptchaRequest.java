@@ -1,7 +1,7 @@
 package org.burgeon.yi.basic.user.client.dto.request;
 
 import lombok.Data;
-import org.burgeon.yi.basic.user.client.constant.Constants;
+import org.burgeon.yi.basic.user.client.constant.UserClientConstants;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
@@ -20,14 +20,14 @@ public class RegisterByMobileCaptchaRequest implements Serializable {
      * 手机号
      */
     @NotBlank
-    @Pattern(regexp = Constants.REG_MOBILE)
+    @Pattern(regexp = UserClientConstants.REG_MOBILE)
     private String mobile;
 
     /**
      * 手机验证码
      */
     @NotBlank
-    @Pattern(regexp = Constants.REG_MOBILE_CAPTCHA)
+    @Pattern(regexp = UserClientConstants.REG_MOBILE_CAPTCHA)
     private String code;
 
 }

@@ -5,8 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.burgeon.yi.basic.user.domain.UserServiceErrorEnum;
 import org.burgeon.yi.basic.user.domain.login.enums.MobileCaptchaTypeEnum;
 import org.burgeon.yi.boot.definition.exception.AssertX;
-import org.burgeon.yi.plugin.sms.definition.MobileCaptchaService;
-import org.burgeon.yi.plugin.sms.definition.MobileCaptchaType;
+import org.burgeon.yi.plugin.sms.definition.MobileCaptchaAdapter;
 import org.springframework.stereotype.Component;
 
 /**
@@ -20,7 +19,7 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class AggLoginLauncher {
 
-    private final MobileCaptchaService mobileCaptchaService;
+    private final MobileCaptchaAdapter mobileCaptchaAdapter;
 
     /**
      * 发送登录验证码
@@ -28,7 +27,7 @@ public class AggLoginLauncher {
      * @param mobile 手机号
      */
     public void sendMobileCaptcha(String mobile) {
-        mobileCaptchaService.sendMobileCaptcha(mobile, MobileCaptchaTypeEnum.LOGIN);
+        mobileCaptchaAdapter.sendMobileCaptcha(mobile, MobileCaptchaTypeEnum.LOGIN);
     }
 
     /**
@@ -38,7 +37,7 @@ public class AggLoginLauncher {
      * @param code 手机验证码
      */
     public void loginByMobileCaptcha(String mobile, String code) {
-        boolean valid = mobileCaptchaService.checkMobileCaptcha(mobile, MobileCaptchaTypeEnum.LOGIN, code);
+        boolean valid = mobileCaptchaAdapter.checkMobileCaptcha(mobile, MobileCaptchaTypeEnum.LOGIN, code);
         AssertX.isTrue(valid, UserServiceErrorEnum.MOBILE_CAPTCHA_INVALID);
     }
 

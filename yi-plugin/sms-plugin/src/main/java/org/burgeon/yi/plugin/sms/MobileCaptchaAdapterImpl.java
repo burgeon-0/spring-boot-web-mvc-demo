@@ -2,28 +2,26 @@ package org.burgeon.yi.plugin.sms;
 
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.core.util.StrUtil;
-import cn.hutool.json.JSONUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.burgeon.yi.boot.definition.cache.Cache;
 import org.burgeon.yi.boot.definition.cache.CacheFactory;
 import org.burgeon.yi.boot.definition.cache.CacheProperties;
-import org.burgeon.yi.boot.definition.exception.AssertX;
-import org.burgeon.yi.plugin.sms.definition.MobileCaptchaService;
+import org.burgeon.yi.plugin.sms.definition.MobileCaptchaAdapter;
 import org.burgeon.yi.plugin.sms.definition.MobileCaptchaType;
 import org.springframework.beans.factory.annotation.Value;
 
 import java.util.concurrent.TimeUnit;
 
 /**
- * 手机验证码服务
+ * 手机验证码适配器
  *
  * @author Sam Lu
  * @date 2022/07/02
  */
 @Slf4j
 @RequiredArgsConstructor
-public class MobileCaptchaServiceImpl implements MobileCaptchaService {
+public class MobileCaptchaAdapterImpl implements MobileCaptchaAdapter {
 
     private final CacheFactory cacheFactory;
     private final CacheProperties cacheProperties;
@@ -35,9 +33,8 @@ public class MobileCaptchaServiceImpl implements MobileCaptchaService {
     @Value("${yi.plugin.sms.mobileCaptcha.show:true}")
     private boolean show;
     /**
-     * 是否是debug模式
-     * <p>
-     * debug模式下，手机验证码不发送，且默认值为：888888
+     * true - 不发送手机验证码，且验证码默认值为：888888<br/>
+     * false - 正常发送手机验证码，且验证码为随机值
      */
     @Value("${yi.plugin.sms.mobileCaptcha.debug:true}")
     private boolean debug;

@@ -4,7 +4,7 @@ package org.burgeon.yi.basic.user.client.constant;
  * @author Sam Lu
  * @date 2022/06/26
  */
-public class Constants {
+public class UserClientConstants {
 
     /**
      * 手机正则表达式

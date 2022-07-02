@@ -1,12 +1,12 @@
 package org.burgeon.yi.plugin.sms.definition;
 
 /**
- * 手机验证码服务
+ * 手机验证码适配器
  *
  * @author Sam Lu
  * @date 2022/07/02
  */
-public interface MobileCaptchaService {
+public interface MobileCaptchaAdapter {
 
     /**
      * 发送手机验证码
