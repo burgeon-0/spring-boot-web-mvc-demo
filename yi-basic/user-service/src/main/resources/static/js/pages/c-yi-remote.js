@@ -24,7 +24,8 @@ define(["c-remote", "c-code"], function(remote, codeMap) {
 
                 var code = ("" + xhr.responseJSON.code).substring(3, 10);
                 var message = codeMap.get(code);
-                message != undefined ? message : xhr.status < 500 ? "未知异常！" : "服务器错误！";
+                var defaultMessage = xhr.status < 500 ? "未知异常！" : "服务器错误！";
+                message = message != undefined ? message : defaultMessage;
                 error(xhr.status, code, message);
             };
 

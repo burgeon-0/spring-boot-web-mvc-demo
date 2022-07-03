@@ -71,6 +71,7 @@ define(["c-conf", "c-yi-remote", "c-lock"], function(conf, yiRemote, cLock) {
             }
 
             if (!this.lock.tryLock()) return;
+            var obj = this;
             yiRemote.post(conf.hostUserService, uri, {
                 mobile: $("#mobile").val()
             }, function(data) {
@@ -84,13 +85,13 @@ define(["c-conf", "c-yi-remote", "c-lock"], function(conf, yiRemote, cLock) {
                         $("#send-code").text("发送验证码");
                         $("#send-code").removeClass("disabled");
                         clearInterval(timer);
-                        this.lock.release();
+                        obj.lock.release();
                     }
                 }, 1000);
             }, function(status, code, message) {
                 $("#mobile").addClass("is-invalid");
                 $("#mobile-feedback").text(message);
-                this.lock.release();
+                obj.lock.release();
             });
         };
     };
