@@ -12,6 +12,7 @@ import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Locale;
 
 /**
  * @author Sam Lu
@@ -28,7 +29,7 @@ public class SessionPostFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
         String uri = httpServletRequest.getRequestURI();
-        if (RestConstants.PATTERN_STATIC_URI.matcher(uri).find()) {
+        if (uri.toLowerCase().endsWith(RestConstants.HTML_SUFFIX)) {
             Session session = sessionAdapter.getSession((HttpServletRequest) request);
             if (session != null) {
                 sessionAdapter.setSession((HttpServletResponse) response, session);

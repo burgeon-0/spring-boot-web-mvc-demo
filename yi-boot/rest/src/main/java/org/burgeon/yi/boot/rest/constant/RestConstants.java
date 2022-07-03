@@ -9,8 +9,8 @@ import java.util.regex.Pattern;
 public class RestConstants {
 
     /**
-     * 静态资源Pattern
+     * HTML后缀
      */
-    public static final Pattern PATTERN_STATIC_URI = Pattern.compile("^/\\w+(/\\w+)*\\.html$");
+    public static final String HTML_SUFFIX = ".html";
 
 }
