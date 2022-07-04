@@ -1,14 +1,14 @@
-package org.burgeon.yi.plugin.sms;
+package org.burgeon.yi.adapter.sms.adapter.impl;
 
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.core.util.StrUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.burgeon.yi.adapter.sms.adapter.MobileCaptchaType;
 import org.burgeon.yi.boot.common.cache.CacheProperties;
 import org.burgeon.yi.boot.definition.cache.Cache;
 import org.burgeon.yi.boot.definition.cache.CacheFactory;
-import org.burgeon.yi.plugin.sms.definition.MobileCaptchaAdapter;
-import org.burgeon.yi.plugin.sms.definition.MobileCaptchaType;
+import org.burgeon.yi.adapter.sms.adapter.MobileCaptchaAdapter;
 import org.springframework.beans.factory.annotation.Value;
 
 import java.util.concurrent.TimeUnit;
@@ -30,18 +30,18 @@ public class MobileCaptchaAdapterImpl implements MobileCaptchaAdapter {
      * true - 输出发送手机验证码的日志<br/>
      * false - 不输出发送手机验证码的日志
      */
-    @Value("${yi.plugin.sms.mobileCaptcha.show:true}")
+    @Value("${yi.adapter.sms.adapter.mobileCaptcha.show:true}")
     private boolean show;
     /**
      * true - 不发送手机验证码，且验证码默认值为：888888<br/>
      * false - 正常发送手机验证码，且验证码为随机值
      */
-    @Value("${yi.plugin.sms.mobileCaptcha.debug:true}")
+    @Value("${yi.adapter.sms.adapter.mobileCaptcha.debug:true}")
     private boolean debug;
     /**
      * 手机验证码有效期，单位为分钟
      */
-    @Value("${yi.plugin.sms.mobileCaptcha.expiresIn:10}")
+    @Value("${yi.adapter.sms.adapter.mobileCaptcha.expiresIn:10}")
     private int expiresIn;
 
     @Override

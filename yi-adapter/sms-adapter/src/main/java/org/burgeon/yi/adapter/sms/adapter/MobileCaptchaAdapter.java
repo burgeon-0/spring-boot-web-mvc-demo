@@ -1,4 +1,4 @@
-package org.burgeon.yi.plugin.sms.definition;
+package org.burgeon.yi.adapter.sms.adapter;
 
 /**
  * 手机验证码适配器

@@ -6,17 +6,17 @@
 
     <parent>
         <groupId>org.burgeon.yi</groupId>
-        <artifactId>yi-plugin</artifactId>
+        <artifactId>yi-adapter</artifactId>
         <version>1.0.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>yi-plugin-sms-plugin</artifactId>
+    <artifactId>yi-adapter-sms-adapter-impl</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>yi-plugin-sms-plugin</name>
-    <description>Sms Plugin</description>
+    <name>yi-adapter-sms-adapter-impl</name>
+    <description>Sms Adapter Impl</description>
 
     <dependencies>
         <dependency>
@@ -25,7 +25,7 @@
         </dependency>
         <dependency>
             <groupId>org.burgeon.yi</groupId>
-            <artifactId>yi-plugin-sms-definition</artifactId>
+            <artifactId>yi-adapter-sms-adapter</artifactId>
         </dependency>
 
         <dependency>

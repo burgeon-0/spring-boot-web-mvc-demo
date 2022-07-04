@@ -36,7 +36,7 @@
         </dependency>
         <dependency>
             <groupId>org.burgeon.yi</groupId>
-            <artifactId>yi-plugin-sms-plugin</artifactId>
+            <artifactId>yi-adapter-sms-adapter-impl</artifactId>
         </dependency>
 
         <dependency>

@@ -1,7 +1,7 @@
 package org.burgeon.yi.basic.user.domain.login.enums;
 
 import lombok.Getter;
-import org.burgeon.yi.plugin.sms.definition.MobileCaptchaType;
+import org.burgeon.yi.adapter.sms.adapter.MobileCaptchaType;
 
 /**
  * 手机验证码类型
