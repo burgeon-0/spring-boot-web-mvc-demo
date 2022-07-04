@@ -20,7 +20,7 @@
     <dependencies>
         <dependency>
             <groupId>org.burgeon.yi</groupId>
-            <artifactId>yi-boot-definition</artifactId>
+            <artifactId>yi-boot-common</artifactId>
         </dependency>
 
         <dependency>

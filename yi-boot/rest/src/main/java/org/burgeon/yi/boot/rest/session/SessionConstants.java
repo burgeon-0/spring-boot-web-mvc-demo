@@ -1,12 +1,10 @@
-package org.burgeon.yi.boot.rest.constant;
-
-import java.util.regex.Pattern;
+package org.burgeon.yi.boot.rest.session;
 
 /**
  * @author Sam Lu
  * @date 2022/07/02
  */
-public class RestConstants {
+public class SessionConstants {
 
     /**
      * HTML后缀

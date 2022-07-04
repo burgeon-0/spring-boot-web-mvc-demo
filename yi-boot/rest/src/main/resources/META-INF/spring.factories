@@ -4,4 +4,4 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
   org.burgeon.yi.boot.rest.session.impl.SessionAdapterImpl,\
   org.burgeon.yi.boot.rest.session.filter.SessionPrevFilter,\
   org.burgeon.yi.boot.rest.session.filter.SessionPostFilter,\
-  org.burgeon.yi.boot.rest.session.TomcatConfiguration
+  org.burgeon.yi.boot.rest.session.SessionConfig

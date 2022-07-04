@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.burgeon.yi.boot.rest.session.Session;
 import org.burgeon.yi.boot.rest.session.SessionAdapter;
-import org.burgeon.yi.boot.rest.constant.RestConstants;
+import org.burgeon.yi.boot.rest.session.SessionConstants;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.annotation.Order;
 
@@ -34,7 +34,7 @@ public class SessionPrevFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
         String uri = httpServletRequest.getRequestURI();
-        if (uri.toLowerCase().endsWith(RestConstants.HTML_SUFFIX)) {
+        if (uri.toLowerCase().endsWith(SessionConstants.HTML_SUFFIX)) {
             if (show) {
                 log.info("{} {}", httpServletRequest.getMethod(), httpServletRequest.getRequestURI());
             }

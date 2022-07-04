@@ -2,9 +2,9 @@ package org.burgeon.yi.boot.rest.session.impl;
 
 import cn.hutool.core.util.StrUtil;
 import lombok.RequiredArgsConstructor;
+import org.burgeon.yi.boot.common.cache.CacheProperties;
 import org.burgeon.yi.boot.definition.cache.Cache;
 import org.burgeon.yi.boot.definition.cache.CacheFactory;
-import org.burgeon.yi.boot.definition.cache.CacheProperties;
 import org.burgeon.yi.boot.rest.session.Session;
 import org.burgeon.yi.boot.rest.session.SessionAdapter;
 import org.burgeon.yi.boot.rest.utils.CookieUtils;

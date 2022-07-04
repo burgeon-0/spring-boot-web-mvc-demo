@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.burgeon.yi.basic.user.domain.UserServiceErrorEnum;
 import org.burgeon.yi.basic.user.domain.login.enums.MobileCaptchaTypeEnum;
-import org.burgeon.yi.boot.definition.exception.AssertX;
+import org.burgeon.yi.boot.common.exception.AssertX;
 import org.burgeon.yi.plugin.sms.definition.MobileCaptchaAdapter;
 import org.springframework.stereotype.Component;
 

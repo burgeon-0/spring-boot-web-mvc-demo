@@ -1,4 +1,7 @@
-package org.burgeon.yi.boot.definition.exception;
+package org.burgeon.yi.boot.common.exception;
+
+import org.burgeon.yi.boot.definition.exception.ErrorEnum;
+import org.burgeon.yi.boot.definition.exception.ValidationException;
 
 import java.util.Objects;
 

@@ -1,4 +1,4 @@
-package org.burgeon.yi.boot.definition.cache;
+package org.burgeon.yi.boot.common.cache;
 
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,7 +15,7 @@ public class CacheProperties {
     /**
      * 缓存Key前缀
      */
-    @Value("${yi.boot.definition.cacheKeyPrefix:org.burgeon.yi.boot}")
+    @Value("${yi.boot.common.cacheKeyPrefix:org.burgeon.yi.boot}")
     private String cacheKeyPrefix;
 
 }

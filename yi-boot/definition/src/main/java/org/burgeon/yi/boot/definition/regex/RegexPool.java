@@ -1,10 +1,10 @@
-package org.burgeon.yi.basic.user.client.constant;
+package org.burgeon.yi.boot.definition.regex;
 
 /**
  * @author Sam Lu
- * @date 2022/06/26
+ * @date 2022/07/04
  */
-public class UserClientConstants {
+public class RegexPool {
 
     /**
      * 手机正则表达式

@@ -1,4 +1,4 @@
-package org.burgeon.yi.boot.common;
+package org.burgeon.yi.boot.common.context;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

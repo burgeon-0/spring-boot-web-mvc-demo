@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * @date 2022/07/02
  */
 @Configuration
-public class TomcatConfiguration {
+public class SessionConfig {
 
     @Bean
     public TomcatContextCustomizer sameSiteCookiesConfig() {
