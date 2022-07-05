@@ -2,12 +2,16 @@
 
 一套易于使用的Java后端代码框架。
 
+[![][GitHub img]][GitHub]
 [![][CircleCI img]][CircleCI]
 [![][Sonar img]][Sonar]
 
 ## 管理后台模板
 
 [AdminLTE 3](https://adminlte.io/themes/v3/index3.html) - [GitHub](https://github.com/ColorlibHQ/AdminLTE)
+
+[GitHub]:https://github.com/burgeon-0/yi/actions
+[GitHub img]:https://github.com/burgeon-0/yi/actions/workflows/build.yml/badge.svg
 
 [CircleCI]:https://dl.circleci.com/status-badge/redirect/gh/burgeon-0/yi/tree/master
 [CircleCI img]:https://dl.circleci.com/status-badge/img/gh/burgeon-0/yi/tree/master.svg?style=svg
