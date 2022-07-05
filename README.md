@@ -2,23 +2,15 @@
 
 一套易于使用的Java后端代码框架。
 
-[![][sonar bugs img]][sonar bugs]
-[![][sonar code smells img]][sonar code smells]
-[![][sonar vulnerabilities img]][sonar vulnerabilities]
-[![][sonar lines of code img]][sonar lines of code]
+[![][CircleCI img]][CircleCI]
+[![][Sonar img]][Sonar]
 
 ## 管理后台模板
 
 [AdminLTE 3](https://adminlte.io/themes/v3/index3.html) - [GitHub](https://github.com/ColorlibHQ/AdminLTE)
 
-[sonar bugs]:https://sonarcloud.io/summary/new_code?id=burgeon-0_yi
-[sonar bugs img]:https://sonarcloud.io/api/project_badges/measure?project=burgeon-0_yi&metric=bugs
+[CircleCI]:https://dl.circleci.com/status-badge/redirect/gh/burgeon-0/yi/tree/master
+[CircleCI img]:https://dl.circleci.com/status-badge/img/gh/burgeon-0/yi/tree/master.svg?style=svg
 
-[sonar code smells]:https://sonarcloud.io/summary/new_code?id=burgeon-0_yi
-[sonar code smells img]:https://sonarcloud.io/api/project_badges/measure?project=burgeon-0_yi&metric=code_smells
-
-[sonar vulnerabilities]:https://sonarcloud.io/summary/new_code?id=burgeon-0_yi
-[sonar vulnerabilities img]:https://sonarcloud.io/api/project_badges/measure?project=burgeon-0_yi&metric=vulnerabilities
-
-[sonar lines of code]:https://sonarcloud.io/summary/new_code?id=burgeon-0_yi
-[sonar lines of code img]:https://sonarcloud.io/api/project_badges/measure?project=burgeon-0_yi&metric=ncloc
+[Sonar]:https://sonarcloud.io/summary/new_code?id=burgeon-0_yi
+[Sonar img]:https://sonarcloud.io/api/project_badges/measure?project=burgeon-0_yi&metric=sqale_index
