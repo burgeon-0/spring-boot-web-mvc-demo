@@ -26,6 +26,24 @@ public abstract class Session {
         values.put(key, value);
     }
 
+    public void remove(String key) {
+        values.remove(key);
+    }
+
+    public void clear() {
+        values.clear();
+    }
+
+    /**
+     * 校验csrfToken
+     *
+     * @return
+     */
     public abstract boolean checkCsrfToken();
+
+    /**
+     * 更新csrfToken
+     */
+    public abstract void refreshCsrfToken();
 
 }

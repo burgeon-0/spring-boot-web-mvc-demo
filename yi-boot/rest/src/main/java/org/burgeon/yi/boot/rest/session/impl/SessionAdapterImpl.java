@@ -8,6 +8,7 @@ import org.burgeon.yi.boot.definition.cache.CacheFactory;
 import org.burgeon.yi.boot.rest.session.Session;
 import org.burgeon.yi.boot.rest.session.SessionAdapter;
 import org.burgeon.yi.boot.rest.utils.CookieUtils;
+import org.springframework.beans.factory.annotation.Value;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -29,6 +30,13 @@ public class SessionAdapterImpl implements SessionAdapter {
     // session缓存2小时
     private static long sessionMaxAge = 2;
 
+    /**
+     * 是否启用cookie的安全模式，
+     * 安全模式下，只有HTTPS请求会带上cookie的内容
+     */
+    @Value("${yi.boot.rest.session.secure:false}")
+    private boolean secure;
+
     @Override
     public Session getSession(HttpServletRequest request) {
         return getSession(request, false);
@@ -36,6 +44,7 @@ public class SessionAdapterImpl implements SessionAdapter {
 
     @Override
     public Session getSession(HttpServletRequest request, boolean create) {
+        // 从ThreadLocal中获取session
         Session session = sessionThreadLocal.get();
         if (session != null) {
             return session;
@@ -60,6 +69,7 @@ public class SessionAdapterImpl implements SessionAdapter {
 
         DefaultSession defaultSession = new DefaultSession(request, sessionId);
         if (StrUtil.isBlank(valuesJson)) {
+            // session值为空时，自动创建csrfToken
             defaultSession.refreshCsrfToken();
         } else {
             defaultSession.setValues(valuesJson);
@@ -70,16 +80,22 @@ public class SessionAdapterImpl implements SessionAdapter {
 
     @Override
     public void setSession(HttpServletResponse response, Session session) {
+        // 将sessionId和csrfToken设置到浏览器中
         DefaultSession defaultSession = (DefaultSession) session;
-
-        // 设置浏览器cookie
         addCookie(response, DefaultSession.COOKIE_KEY_SESSION_ID, session.getSessionId());
         addCookie(response, defaultSession.getCsrfTokenCookieKey(), defaultSession.getCsrfToken());
+    }
 
+    @Override
+    public void storeSession(Session session) {
         // 缓存session值
+        DefaultSession defaultSession = (DefaultSession) session;
         Cache<String> cache = cacheFactory.getCache(getCacheKey(session.getSessionId()));
         cache.set(defaultSession.getValues(), sessionMaxAge, TimeUnit.HOURS);
+    }
 
+    @Override
+    public void clear() {
         // 移除ThreadLocal中的session
         sessionThreadLocal.remove();
     }
@@ -94,8 +110,10 @@ public class SessionAdapterImpl implements SessionAdapter {
     private void addCookie(HttpServletResponse response, String key, String value) {
         Cookie cookie = new Cookie(key, value);
         cookie.setDomain("");
+        cookie.setPath("/");
         cookie.setMaxAge((int) (sessionMaxAge * 60 * 60));
         cookie.setHttpOnly(true);
+        cookie.setSecure(secure);
         response.addCookie(cookie);
     }
 

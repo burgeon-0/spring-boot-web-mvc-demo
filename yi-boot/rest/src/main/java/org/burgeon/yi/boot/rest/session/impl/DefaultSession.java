@@ -5,6 +5,7 @@ import cn.hutool.crypto.digest.MD5;
 import cn.hutool.json.JSONUtil;
 import org.burgeon.yi.boot.rest.session.Session;
 import org.burgeon.yi.boot.rest.utils.CookieUtils;
+import org.burgeon.yi.boot.rest.session.SessionFilter;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.concurrent.ConcurrentHashMap;
@@ -26,8 +27,15 @@ public class DefaultSession extends Session {
         this.request = request;
     }
 
-    public void refreshCsrfToken() {
-        super.put(CSRF_TOKEN_KEY, RandomUtil.randomStringUpper(12));
+    /**
+     * 注意：clear的时候，csrfToken不会被清除
+     * （csrfToken是自动生成的：{@link SessionAdapterImpl#getSession(HttpServletRequest, boolean)}）
+     */
+    @Override
+    public void clear() {
+        String csrfToken = getCsrfToken();
+        values.clear();
+        values.put(CSRF_TOKEN_KEY, csrfToken);
     }
 
     @Override
@@ -35,10 +43,11 @@ public class DefaultSession extends Session {
         String cachedCsrfToken = getCsrfToken();
         String csrfTokenCookieKey = getCsrfTokenCookieKey();
         String cookieCsrfToken = CookieUtils.getValue(request, csrfTokenCookieKey);
-        boolean valid = cachedCsrfToken.equals(cookieCsrfToken);
+        return cachedCsrfToken.equals(cookieCsrfToken);
+    }
 
-        refreshCsrfToken();
-        return valid;
+    public void refreshCsrfToken() {
+        super.put(CSRF_TOKEN_KEY, RandomUtil.randomStringUpper(12));
     }
 
     public String getValues() {
