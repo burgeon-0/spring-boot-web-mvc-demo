@@ -24,11 +24,11 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public Response<Void> handleValidationException(ValidationException ex, HttpServletRequest request) {
         Response<Void> response = Response.failure(HttpStatus.BAD_REQUEST.value(), ex);
-        logException(ex, request, response);
+        logException(request, response);
         return response;
     }
 
-    private void logException(ValidationException ex, HttpServletRequest request, Response<Void> response) {
+    private void logException(HttpServletRequest request, Response<Void> response) {
         log.warn("[Exception] [{} {}] => response: {}", request.getMethod(), request.getRequestURI(), response);
     }
 

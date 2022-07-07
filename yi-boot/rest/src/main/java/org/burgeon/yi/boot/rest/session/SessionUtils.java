@@ -13,7 +13,7 @@ public class SessionUtils {
 
     private static class Holder {
 
-        private static SessionUtils INSTANCE = new SessionUtils();
+        private static SessionUtils instance = new SessionUtils();
 
     }
 
@@ -24,23 +24,23 @@ public class SessionUtils {
     }
 
     public static Session getSession(HttpServletRequest request) {
-        return Holder.INSTANCE.sessionAdapter.getSession(request);
+        return Holder.instance.sessionAdapter.getSession(request);
     }
 
     public static Session getSession(HttpServletRequest request, boolean create) {
-        return Holder.INSTANCE.sessionAdapter.getSession(request, create);
+        return Holder.instance.sessionAdapter.getSession(request, create);
     }
 
     public static void setSession(HttpServletResponse response, Session session) {
-        Holder.INSTANCE.sessionAdapter.setSession(response, session);
+        Holder.instance.sessionAdapter.setSession(response, session);
     }
 
     public static void storeSession(Session session) {
-        Holder.INSTANCE.sessionAdapter.storeSession(session);
+        Holder.instance.sessionAdapter.storeSession(session);
     }
 
     public static void clear() {
-        Holder.INSTANCE.sessionAdapter.clear();
+        Holder.instance.sessionAdapter.clear();
     }
 
 }
