@@ -6,6 +6,8 @@ package org.burgeon.yi.boot.rest.session;
  */
 public class SessionConstants {
 
+    private SessionConstants() {}
+
     /**
      * HTML后缀
      */

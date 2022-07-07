@@ -29,7 +29,7 @@ public class LoginController {
      * @return 发送结果
      */
     @PostMapping("/cgi/login/actions/send-mobile-captcha")
-    public Response sendMobileCaptcha(@Validated @RequestBody LoginSendMobileCaptchaRequest request) {
+    public Response<Void> sendMobileCaptcha(@Validated @RequestBody LoginSendMobileCaptchaRequest request) {
         loginService.sendMobileCaptcha(request);
         return Response.success();
     }

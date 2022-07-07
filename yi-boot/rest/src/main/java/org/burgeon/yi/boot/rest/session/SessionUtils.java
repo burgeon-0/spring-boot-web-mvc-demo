@@ -11,34 +11,36 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class SessionUtils {
 
-    private static SessionAdapter sessionAdapter;
+    private static class Holder {
 
-    static {
-        new SessionUtils();
+        private static SessionUtils INSTANCE = new SessionUtils();
+
     }
+
+    private SessionAdapter sessionAdapter;
 
     private SessionUtils() {
         sessionAdapter = AppContext.getBean(SessionAdapter.class);
     }
 
     public static Session getSession(HttpServletRequest request) {
-        return sessionAdapter.getSession(request);
+        return Holder.INSTANCE.sessionAdapter.getSession(request);
     }
 
     public static Session getSession(HttpServletRequest request, boolean create) {
-        return sessionAdapter.getSession(request, create);
+        return Holder.INSTANCE.sessionAdapter.getSession(request, create);
     }
 
     public static void setSession(HttpServletResponse response, Session session) {
-        sessionAdapter.setSession(response, session);
+        Holder.INSTANCE.sessionAdapter.setSession(response, session);
     }
 
     public static void storeSession(Session session) {
-        sessionAdapter.storeSession(session);
+        Holder.INSTANCE.sessionAdapter.storeSession(session);
     }
 
     public static void clear() {
-        sessionAdapter.clear();
+        Holder.INSTANCE.sessionAdapter.clear();
     }
 
 }

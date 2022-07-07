@@ -21,7 +21,7 @@ require(["c-conf", "c-lr", "c-yi-remote", "c-lock"], function(conf, cLr, yiRemot
         }, function(data) {
             lock.release();
             window.location.href = data;
-        }, function(status, code, message) {
+        }, function(_status, _code, message) {
             $("#code").addClass("is-invalid");
             $("#code-feedback").text(message);
             lock.release();

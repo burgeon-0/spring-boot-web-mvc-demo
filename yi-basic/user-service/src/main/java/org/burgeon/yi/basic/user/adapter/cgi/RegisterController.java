@@ -29,7 +29,7 @@ public class RegisterController {
      * @return 发送结果
      */
     @PostMapping("/cgi/register/actions/send-mobile-captcha")
-    public Response sendMobileCaptcha(@Validated @RequestBody RegisterSendMobileCaptchaRequest request) {
+    public Response<Void> sendMobileCaptcha(@Validated @RequestBody RegisterSendMobileCaptchaRequest request) {
         registerService.sendMobileCaptcha(request);
         return Response.success();
     }

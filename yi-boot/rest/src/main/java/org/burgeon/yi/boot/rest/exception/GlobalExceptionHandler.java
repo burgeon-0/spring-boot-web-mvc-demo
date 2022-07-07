@@ -22,13 +22,13 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(ValidationException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
-    public Response handleValidationException(ValidationException ex, HttpServletRequest request) {
-        Response response = Response.failure(HttpStatus.BAD_REQUEST.value(), ex);
+    public Response<Void> handleValidationException(ValidationException ex, HttpServletRequest request) {
+        Response<Void> response = Response.failure(HttpStatus.BAD_REQUEST.value(), ex);
         logException(ex, request, response);
         return response;
     }
 
-    private void logException(ValidationException ex, HttpServletRequest request, Response response) {
+    private void logException(ValidationException ex, HttpServletRequest request, Response<Void> response) {
         log.warn("[Exception] [{} {}] => response: {}", request.getMethod(), request.getRequestURI(), response);
     }
 

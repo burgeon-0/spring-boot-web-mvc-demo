@@ -13,6 +13,8 @@ import java.util.Objects;
  */
 public class AssertX {
 
+    private AssertX() {}
+
     /**
      * 断言为空
      *

@@ -6,12 +6,12 @@ define(["c-conf", "c-yi-remote", "c-lock"], function(conf, yiRemote, cLock) {
         $("#send-code").width($("#send-code").width());
     });
 
-    $("#mobile").focus(function(event) {
+    $("#mobile").focus(function(_event) {
         $("#mobile").removeClass("is-invalid");
         $("#mobile-feedback").text("");
     });
 
-    $("#code").focus(function(event) {
+    $("#code").focus(function(_event) {
         $("#code").removeClass("is-invalid");
         $("#code-feedback").text("");
     });
@@ -74,7 +74,7 @@ define(["c-conf", "c-yi-remote", "c-lock"], function(conf, yiRemote, cLock) {
             var obj = this;
             yiRemote.post(conf.hostUserService, uri, {
                 mobile: $("#mobile").val()
-            }, function(data) {
+            }, function(_data) {
                 var seconds = 60;
                 $("#send-code").text(seconds-- + "s");
                 $("#send-code").addClass("disabled");
@@ -88,7 +88,7 @@ define(["c-conf", "c-yi-remote", "c-lock"], function(conf, yiRemote, cLock) {
                         obj.lock.release();
                     }
                 }, 1000);
-            }, function(status, code, message) {
+            }, function(_status, _code, message) {
                 $("#mobile").addClass("is-invalid");
                 $("#mobile-feedback").text(message);
                 obj.lock.release();

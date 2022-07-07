@@ -6,6 +6,8 @@ package org.burgeon.yi.boot.definition.regex;
  */
 public class RegexPool {
 
+    private RegexPool() {}
+
     /**
      * 手机正则表达式
      */

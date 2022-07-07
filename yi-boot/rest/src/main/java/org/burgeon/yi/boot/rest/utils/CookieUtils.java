@@ -10,6 +10,8 @@ import java.util.Objects;
  */
 public class CookieUtils {
 
+    private CookieUtils() {}
+
     public static String getValue(HttpServletRequest request, String key) {
         if (Objects.isNull(key)) {
             return null;
