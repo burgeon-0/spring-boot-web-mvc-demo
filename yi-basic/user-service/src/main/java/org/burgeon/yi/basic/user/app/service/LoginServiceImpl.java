@@ -32,8 +32,8 @@ public class LoginServiceImpl implements LoginService {
     }
 
     @Override
-    public String loginByMobileCaptcha(LoginByMobileCaptchaRequest request) {
-        aggLoginLauncher.loginByMobileCaptcha(request.getMobile(), request.getCode());
+    public String loginWithMobileCaptcha(LoginByMobileCaptchaRequest request) {
+        aggLoginLauncher.loginWithMobileCaptcha(request.getMobile(), request.getCode());
         return loginDefaultRedirectUrl;
     }
 

@@ -40,9 +40,9 @@ public class LoginController {
      * @param request 登录请求
      * @return 登录成功的跳转地址
      */
-    @PostMapping("/cgi/login/mobile")
-    public Response<String> loginByMobileCaptcha(@Validated @RequestBody LoginByMobileCaptchaRequest request) {
-        String url = loginService.loginByMobileCaptcha(request);
+    @PostMapping("/cgi/login/mobile-captcha")
+    public Response<String> loginWithMobileCaptcha(@Validated @RequestBody LoginByMobileCaptchaRequest request) {
+        String url = loginService.loginWithMobileCaptcha(request);
         return Response.success(url);
     }
 

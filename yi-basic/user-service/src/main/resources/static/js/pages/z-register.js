@@ -31,7 +31,7 @@ require(["c-conf", "c-lr", "c-yi-remote", "c-lock"], function(conf, cLr, yiRemot
         }
 
         if (!lock.tryLock()) return;
-        yiRemote.post(conf.hostUserService, conf.uriRegisterByMobileCaptcha, {
+        yiRemote.post(conf.hostUserService, conf.uriRegisterWithMobileCaptcha, {
             mobile: $("#mobile").val(),
             code: $("#code").val()
         }, function(data) {

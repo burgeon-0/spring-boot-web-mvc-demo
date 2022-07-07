@@ -40,9 +40,9 @@ public class RegisterController {
      * @param request 注册请求
      * @return 注册成功的跳转地址
      */
-    @PostMapping("/cgi/register/mobile")
-    public Response<String> registerByMobileCaptcha(@Validated @RequestBody RegisterByMobileCaptchaRequest request) {
-        String url = registerService.registerByMobileCaptcha(request);
+    @PostMapping("/cgi/register/mobile-captcha")
+    public Response<String> registerWithMobileCaptcha(@Validated @RequestBody RegisterByMobileCaptchaRequest request) {
+        String url = registerService.registerWithMobileCaptcha(request);
         return Response.success(url);
     }
 

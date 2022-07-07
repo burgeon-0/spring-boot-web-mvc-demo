@@ -36,7 +36,7 @@ public class AggRegisterLauncher {
      * @param mobile 手机号
      * @param code 手机验证码
      */
-    public void registerByMobileCaptcha(String mobile, String code) {
+    public void registerWithMobileCaptcha(String mobile, String code) {
         boolean valid = mobileCaptchaAdapter.checkMobileCaptcha(mobile, MobileCaptchaTypeEnum.REGISTER, code);
         AssertX.isTrue(valid, UserServiceErrorEnum.MOBILE_CAPTCHA_INVALID);
     }

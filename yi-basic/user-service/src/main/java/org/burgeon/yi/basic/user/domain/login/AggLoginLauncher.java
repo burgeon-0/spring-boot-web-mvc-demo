@@ -36,7 +36,7 @@ public class AggLoginLauncher {
      * @param mobile 手机号
      * @param code 手机验证码
      */
-    public void loginByMobileCaptcha(String mobile, String code) {
+    public void loginWithMobileCaptcha(String mobile, String code) {
         boolean valid = mobileCaptchaAdapter.checkMobileCaptcha(mobile, MobileCaptchaTypeEnum.LOGIN, code);
         AssertX.isTrue(valid, UserServiceErrorEnum.MOBILE_CAPTCHA_INVALID);
     }

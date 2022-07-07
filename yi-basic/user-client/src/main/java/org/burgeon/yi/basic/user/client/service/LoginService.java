@@ -24,6 +24,6 @@ public interface LoginService {
      * @param request 登录请求
      * @return 登录成功的跳转地址
      */
-    String loginByMobileCaptcha(LoginByMobileCaptchaRequest request);
+    String loginWithMobileCaptcha(LoginByMobileCaptchaRequest request);
 
 }

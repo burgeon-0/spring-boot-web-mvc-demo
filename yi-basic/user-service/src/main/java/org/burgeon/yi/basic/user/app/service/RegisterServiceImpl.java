@@ -32,8 +32,8 @@ public class RegisterServiceImpl implements RegisterService {
     }
 
     @Override
-    public String registerByMobileCaptcha(RegisterByMobileCaptchaRequest request) {
-        aggRegisterLauncher.registerByMobileCaptcha(request.getMobile(), request.getCode());
+    public String registerWithMobileCaptcha(RegisterByMobileCaptchaRequest request) {
+        aggRegisterLauncher.registerWithMobileCaptcha(request.getMobile(), request.getCode());
         return registerDefaultRedirectUrl;
     }
 

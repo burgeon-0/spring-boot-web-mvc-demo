@@ -5,9 +5,9 @@ define([], function() {
     var config = {
         hostUserService: "http://localhost:8383",
         uriLoginSendMobileCaptcha: "/cgi/login/actions/send-mobile-captcha",
-        uriLoginByMobileCaptcha: "/cgi/login/mobile",
+        uriLoginWithMobileCaptcha: "/cgi/login/mobile-captcha",
         uriRegisterSendMobileCaptcha: "/cgi/register/actions/send-mobile-captcha",
-        uriRegisterByMobileCaptcha: "/cgi/register/mobile"
+        uriRegisterWithMobileCaptcha: "/cgi/register/mobile-captcha"
     };
 
     return config;
