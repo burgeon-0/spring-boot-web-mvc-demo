@@ -2,7 +2,7 @@ define([], function() {
 
     "use strict";
 
-    var lock = function() {
+    return function() {
         this.locked = false;
         this.tryLock = function() {
             if (!this.locked) {
@@ -15,7 +15,5 @@ define([], function() {
             this.locked = false;
         };
     };
-
-    return lock;
 
 });

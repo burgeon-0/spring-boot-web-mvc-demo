@@ -14,13 +14,13 @@ public class ValidationException extends RuntimeException {
      * 错误码
      */
     @Getter
-    private String code;
+    private final String code;
 
     /**
      * 错误信息
      */
     @Getter
-    private String message;
+    private final String message;
 
     public ValidationException(ErrorEnum error) {
         this.code = error.getCode();

@@ -2,7 +2,7 @@ define(["c-remote", "c-code"], function(remote, codeMap) {
 
     "use strict";
 
-    var yiRemote = {
+    return {
         post: function(host, uri, body, success, error) {
             var yiSuccess = function(response) {
                 console.log("success => ");
@@ -32,7 +32,5 @@ define(["c-remote", "c-code"], function(remote, codeMap) {
             remote.post(host, uri, body, yiSuccess, yiError);
         }
     };
-
-    return yiRemote;
 
 });

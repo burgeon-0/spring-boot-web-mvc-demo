@@ -19,7 +19,7 @@ define(["c-conf", "c-yi-remote", "c-lock"], function(conf, yiRemote, cLock) {
     var regMobile = /^1[3-9]\d{9}$/;
     var regCode = /^\d{6}$/;
 
-    var lr = function() {
+    return function() {
         this.lock = new cLock();
         this.removeErrorMessage = function() {
             $("#mobile").removeClass("is-invalid");
@@ -53,7 +53,7 @@ define(["c-conf", "c-yi-remote", "c-lock"], function(conf, yiRemote, cLock) {
             }
             return true;
         };
-        this.sendCode = function(type) {
+        this.sendCode = function(event, type) {
             event.preventDefault();
             this.removeErrorMessage();
             if (!this.checkMobile()) return;
@@ -95,7 +95,5 @@ define(["c-conf", "c-yi-remote", "c-lock"], function(conf, yiRemote, cLock) {
             });
         };
     };
-
-    return lr;
 
 });

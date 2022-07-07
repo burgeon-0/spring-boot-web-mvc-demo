@@ -5,7 +5,7 @@ require(["c-conf", "c-lr", "c-yi-remote", "c-lock"], function(conf, cLr, yiRemot
     var lr = new cLr();
 
     $("#send-code").click(function(event) {
-        lr.sendCode("REGISTER");
+        lr.sendCode(event, "REGISTER");
     });
 
     $("#agreeTerms").click(function(event) {

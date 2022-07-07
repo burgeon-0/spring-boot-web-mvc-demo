@@ -2,7 +2,7 @@ define([], function() {
 
     "use strict";
 
-    var remote = {
+    return {
         post: function(host, uri, body, success, error) {
             if (error == undefined) {
                 error = function(xhr, ajaxOptions, thrownError) {
@@ -26,7 +26,5 @@ define([], function() {
             });
         }
     };
-
-    return remote;
 
 });
