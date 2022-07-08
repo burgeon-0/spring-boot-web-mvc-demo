@@ -6,7 +6,7 @@ import org.burgeon.yi.boot.definition.exception.ErrorEnum;
 /**
  * 用户服务异常枚举
  * <p>
- * 错误码格式：XXYYZZZ，XX - 系统编号，YY - 领域编号，ZZZ - 错误编号，如：0101001 - 用户服务的登录业务中，手机验证码不正确。
+ * 错误码格式：XXYYZZZ，XX - 系统编号，YY - 领域编号，ZZZ - 错误编号，如：0101001 - 用户服务的登录业务中，账号或密码错误。
  * 用户服务的系统编号为：01。
  * YYZZZ中，00开头的错误码表示通用错误码，01~99开头的错误码表示业务错误码。
  *
@@ -21,9 +21,9 @@ public enum UserServiceErrorEnum implements ErrorEnum {
      * ###########################
      */
     /**
-     * 手机验证码不正确
+     * 账号或密码错误
      */
-    MOBILE_CAPTCHA_INVALID("0101001", "MobileCaptcha invalid.");
+    USERNAME_OR_PASSWORD_INVALID("0101001", "The username or password is invalid.");
 
     UserServiceErrorEnum(String code, String message) {
         this.code = code;

@@ -1,7 +1,6 @@
 package org.burgeon.yi.basic.user.client.service;
 
-import org.burgeon.yi.basic.user.client.dto.request.LoginByMobileCaptchaRequest;
-import org.burgeon.yi.basic.user.client.dto.request.LoginSendMobileCaptchaRequest;
+import org.burgeon.yi.basic.user.client.dto.request.LoginRequest;
 
 /**
  * 登录服务
@@ -12,18 +11,11 @@ import org.burgeon.yi.basic.user.client.dto.request.LoginSendMobileCaptchaReques
 public interface LoginService {
 
     /**
-     * 发送登录验证码
-     *
-     * @param request 发送验证码请求
-     */
-    void sendMobileCaptcha(LoginSendMobileCaptchaRequest request);
-
-    /**
-     * 通过手机验证码登录
+     * 通过账号密码进行登录
      *
      * @param request 登录请求
      * @return 登录成功的跳转地址
      */
-    String loginWithMobileCaptcha(LoginByMobileCaptchaRequest request);
+    String login(LoginRequest request);
 
 }
