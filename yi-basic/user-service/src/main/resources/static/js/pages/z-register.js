@@ -12,9 +12,11 @@ require(["c-conf", "c-lr", "c-yi-remote", "c-lock"], function(conf, cLr, yiRemot
         if ($("#agreeTerms").is(":checked")) {
             $("#agreeTerms").removeClass("is-invalid");
             $("#agreeTerms-feedback").text("");
+            $("#agreeTerms-feedback").css("display", "none");
         } else {
             $("#agreeTerms").addClass("is-invalid");
             $("#agreeTerms-feedback").text("请先阅读并勾选同意《用户协议》");
+            $("#agreeTerms-feedback").css("display", "inline");
         }
     });
 
@@ -27,6 +29,7 @@ require(["c-conf", "c-lr", "c-yi-remote", "c-lock"], function(conf, cLr, yiRemot
         if (!$("#agreeTerms").is(":checked")) {
             $("#agreeTerms").addClass("is-invalid");
             $("#agreeTerms-feedback").text("请先阅读并勾选同意《用户协议》");
+            $("#agreeTerms-feedback").css("display", "inline");
             return;
         }
 
