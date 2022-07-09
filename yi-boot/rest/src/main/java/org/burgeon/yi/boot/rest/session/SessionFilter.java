@@ -2,9 +2,6 @@ package org.burgeon.yi.boot.rest.session;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.burgeon.yi.boot.rest.session.Session;
-import org.burgeon.yi.boot.rest.session.SessionAdapter;
-import org.burgeon.yi.boot.rest.session.SessionConstants;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.annotation.Order;
 
@@ -25,8 +22,8 @@ public class SessionFilter implements Filter {
     private final SessionAdapter sessionAdapter;
 
     /**
-     * true - 输出静态资源的访问日志<br/>
-     * false - 不输出静态资源的访问日志
+     * true - 输出访问日志<br/>
+     * false - 不输出访问日志
      */
     @Value("${yi.boot.rest.sessionFilter.show:true}")
     private boolean show;
@@ -39,7 +36,7 @@ public class SessionFilter implements Filter {
             if (uri.toLowerCase().endsWith(SessionConstants.HTML_SUFFIX)
                     || uri.startsWith(SessionConstants.CGI_PREFIX)) {
                 if (show) {
-                    log.info("{} {}", httpServletRequest.getMethod(), httpServletRequest.getRequestURI());
+                    log.info("[SessionFilter] {} {}", httpServletRequest.getMethod(), httpServletRequest.getRequestURI());
                 }
                 Session session = sessionAdapter.getSession((HttpServletRequest) request, true);
                 sessionAdapter.setSession((HttpServletResponse) response, session);

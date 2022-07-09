@@ -16,8 +16,8 @@ public class SessionConfig {
     @Bean
     public TomcatContextCustomizer sameSiteCookiesConfig() {
         return context -> {
-            final Rfc6265CookieProcessor cookieProcessor = new Rfc6265CookieProcessor();
             // 设置Cookie的SameSite
+            final Rfc6265CookieProcessor cookieProcessor = new Rfc6265CookieProcessor();
             cookieProcessor.setSameSiteCookies(SameSiteCookies.STRICT.getValue());
             context.setCookieProcessor(cookieProcessor);
         };
