@@ -6,9 +6,23 @@
 [![][CircleCI img]][CircleCI]
 [![][Sonar img]][Sonar]
 
-## 管理后台模板
+## 架构
 
-[AdminLTE 3](https://adminlte.io/themes/v3/index3.html) - [GitHub](https://github.com/ColorlibHQ/AdminLTE)
+<img src="src/docs/yi-architecture.png">
+
+## 技术栈
+
+### 后端技术
+
+- Spring Boot (2.5.5)
+- Redission (3.17.4)
+- Lombok (1.18.24)
+- Hutool (5.7.22)
+- MapStruct (1.4.2.Final)
+
+### 前端技术
+
+- [AdminLTE 3](https://github.com/ColorlibHQ/AdminLTE)
 
 [GitHub]:https://github.com/burgeon-0/yi/actions
 [GitHub img]:https://github.com/burgeon-0/yi/actions/workflows/build.yml/badge.svg
