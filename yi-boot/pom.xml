@@ -23,6 +23,7 @@
         <module>definition</module>
         <module>redis</module>
         <module>rest</module>
+        <module>security</module>
     </modules>
 
 </project>
