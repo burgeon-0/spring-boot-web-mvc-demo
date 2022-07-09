@@ -19,8 +19,7 @@
     <description>Yi Basic</description>
 
     <modules>
-        <module>user-service</module>
-        <module>user-client</module>
+        <module>user</module>
     </modules>
 
 </project>

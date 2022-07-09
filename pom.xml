@@ -27,6 +27,7 @@
 
     <properties>
         <yi-basic-user-client.version>1.0.0-SNAPSHOT</yi-basic-user-client.version>
+        <yi-basic-user-service.version>1.0.0-SNAPSHOT</yi-basic-user-service.version>
         <yi-boot-common.version>1.0.0-SNAPSHOT</yi-boot-common.version>
         <yi-boot-definition.version>1.0.0-SNAPSHOT</yi-boot-definition.version>
         <yi-boot-redis.version>1.0.0-SNAPSHOT</yi-boot-redis.version>
@@ -55,6 +56,11 @@
                 <groupId>org.burgeon.yi</groupId>
                 <artifactId>yi-basic-user-client</artifactId>
                 <version>${yi-basic-user-client.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.burgeon.yi</groupId>
+                <artifactId>yi-basic-user-service</artifactId>
+                <version>${yi-basic-user-service.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.burgeon.yi</groupId>
