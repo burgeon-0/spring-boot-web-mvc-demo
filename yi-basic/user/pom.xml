@@ -22,7 +22,7 @@
     <modules>
         <module>user-client</module>
         <module>user-service</module>
-        <module>starter</module>
+        <module>user-starter</module>
     </modules>
 
 </project>
