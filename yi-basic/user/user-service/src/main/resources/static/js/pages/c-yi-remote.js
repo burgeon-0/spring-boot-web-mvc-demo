@@ -4,7 +4,7 @@ define(["c-remote", "c-code"], function(remote, codeMap) {
 
     return {
         post: function(host, uri, body, success, error) {
-            var yiSuccess = function(response) {
+            let yiSuccess = function(response) {
                 console.log("success => ");
                 console.log("code: " + response.code);
                 console.log("message: " + response.message);
@@ -13,7 +13,7 @@ define(["c-remote", "c-code"], function(remote, codeMap) {
                 success(response.data);
             };
 
-            var yiError = function(xhr, ajaxOptions, thrownError) {
+            let yiError = function(xhr, ajaxOptions, thrownError) {
                 console.log("error => ");
                 console.log("readyState: " + xhr.readyState);
                 console.log("status: " + xhr.status);
@@ -22,9 +22,9 @@ define(["c-remote", "c-code"], function(remote, codeMap) {
                 console.log("ajaxOptions: " + ajaxOptions);
                 console.log("thrownError: " + thrownError);
 
-                var code = ("" + xhr.responseJSON.code).substring(3, 10);
-                var message = codeMap.get(code);
-                var defaultMessage = xhr.status < 500 ? "未知异常！" : "服务器错误！";
+                let code = ("" + xhr.responseJSON.code).substring(3, 10);
+                let message = codeMap.get(code);
+                let defaultMessage = xhr.status < 500 ? "未知异常！" : "服务器错误！";
                 message = message != undefined ? message : defaultMessage;
                 error(xhr.status, code, message);
             };

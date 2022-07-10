@@ -1,7 +1,7 @@
 package org.burgeon.yi.adapter.sms.adapter.impl;
 
+import cn.hutool.core.text.CharSequenceUtil;
 import cn.hutool.core.util.RandomUtil;
-import cn.hutool.core.util.StrUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.burgeon.yi.adapter.sms.adapter.MobileCaptchaType;
@@ -73,7 +73,7 @@ public class MobileCaptchaAdapterImpl implements MobileCaptchaAdapter {
         // 查看手机验证码是否存在
         Cache<String> cache = cacheFactory.getCache(getCacheKey(mobile, type));
         String cachedCode = cache.get();
-        if (StrUtil.isBlank(cachedCode)) {
+        if (CharSequenceUtil.isBlank(cachedCode)) {
             return false;
         }
 
@@ -95,7 +95,7 @@ public class MobileCaptchaAdapterImpl implements MobileCaptchaAdapter {
      * @return
      */
     private String getCacheKey(String mobile, MobileCaptchaType type) {
-        return StrUtil.format("{}:mobileCaptcha:{}-{}", cacheProperties.getCacheKeyPrefix(),
+        return CharSequenceUtil.format("{}:mobileCaptcha:{}-{}", cacheProperties.getCacheKeyPrefix(),
                 mobile, type.getType());
     }
 

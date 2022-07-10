@@ -1,6 +1,6 @@
 package org.burgeon.yi.boot.rest.session.impl;
 
-import cn.hutool.core.util.StrUtil;
+import cn.hutool.core.text.CharSequenceUtil;
 import lombok.RequiredArgsConstructor;
 import org.burgeon.yi.boot.common.cache.CacheProperties;
 import org.burgeon.yi.boot.definition.cache.Cache;
@@ -54,12 +54,12 @@ public class SessionAdapterImpl implements SessionAdapter {
         String sessionId = CookieUtils.getValue(request, DefaultSession.COOKIE_KEY_SESSION_ID);
 
         // 如果取不到sessionId，并且create为false，则直接返回null
-        if (StrUtil.isBlank(sessionId) && !create) {
+        if (CharSequenceUtil.isBlank(sessionId) && !create) {
             return null;
         }
 
         // 如果sessionId为null，并且create为true，则创建sessionId
-        if (StrUtil.isBlank(sessionId)) {
+        if (CharSequenceUtil.isBlank(sessionId)) {
             sessionId = UUID.randomUUID().toString();
         }
 
@@ -68,7 +68,7 @@ public class SessionAdapterImpl implements SessionAdapter {
         String valuesJson = cache.get();
 
         DefaultSession defaultSession = new DefaultSession(request, sessionId);
-        if (StrUtil.isBlank(valuesJson)) {
+        if (CharSequenceUtil.isBlank(valuesJson)) {
             // session值为空时，自动创建csrfToken
             defaultSession.refreshCsrfToken();
         } else {
@@ -124,7 +124,7 @@ public class SessionAdapterImpl implements SessionAdapter {
      * @return 缓存Key
      */
     private String getCacheKey(String sessionId) {
-        return StrUtil.format("{}:session:{}", cacheProperties.getCacheKeyPrefix(), sessionId);
+        return CharSequenceUtil.format("{}:session:{}", cacheProperties.getCacheKeyPrefix(), sessionId);
     }
 
 }

@@ -2,8 +2,8 @@ require(["c-conf", "c-lock", "c-login-basic", "c-yi-remote"], function(conf, cLo
 
     "use strict";
 
-    var lb = new cLb();
-    var lock = new cLock();
+    let lb = new cLb();
+    let lock = new cLock();
 
     $("#login").click(function(event) {
         event.preventDefault();
