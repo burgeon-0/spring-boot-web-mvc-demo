@@ -1,8 +1,8 @@
-package org.burgeon.yi.boot.redis;
+package org.bg181.yi.boot.redis;
 
 import lombok.RequiredArgsConstructor;
-import org.burgeon.yi.boot.definition.cache.Cache;
-import org.burgeon.yi.boot.definition.cache.CacheFactory;
+import org.bg181.yi.boot.definition.cache.Cache;
+import org.bg181.yi.boot.definition.cache.CacheFactory;
 import org.redisson.api.RBucket;
 import org.redisson.api.RedissonClient;
 

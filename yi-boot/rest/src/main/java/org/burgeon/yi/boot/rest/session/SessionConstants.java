@@ -1,4 +1,4 @@
-package org.burgeon.yi.boot.rest.session;
+package org.bg181.yi.boot.rest.session;
 
 /**
  * @author Sam Lu

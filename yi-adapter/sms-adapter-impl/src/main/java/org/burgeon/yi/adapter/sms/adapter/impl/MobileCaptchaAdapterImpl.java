@@ -1,14 +1,14 @@
-package org.burgeon.yi.adapter.sms.adapter.impl;
+package org.bg181.yi.adapter.sms.adapter.impl;
 
 import cn.hutool.core.text.CharSequenceUtil;
 import cn.hutool.core.util.RandomUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.burgeon.yi.adapter.sms.adapter.MobileCaptchaType;
-import org.burgeon.yi.boot.common.cache.CacheProperties;
-import org.burgeon.yi.boot.definition.cache.Cache;
-import org.burgeon.yi.boot.definition.cache.CacheFactory;
-import org.burgeon.yi.adapter.sms.adapter.MobileCaptchaAdapter;
+import org.bg181.yi.adapter.sms.adapter.MobileCaptchaType;
+import org.bg181.yi.boot.common.cache.CacheProperties;
+import org.bg181.yi.boot.definition.cache.Cache;
+import org.bg181.yi.boot.definition.cache.CacheFactory;
+import org.bg181.yi.adapter.sms.adapter.MobileCaptchaAdapter;
 import org.springframework.beans.factory.annotation.Value;
 
 import java.util.concurrent.TimeUnit;

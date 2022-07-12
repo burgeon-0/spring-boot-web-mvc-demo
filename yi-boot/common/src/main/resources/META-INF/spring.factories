@@ -1,4 +1,4 @@
 # Auto Configure
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  org.burgeon.yi.boot.common.cache.CacheProperties,\
-  org.burgeon.yi.boot.common.context.AppContext
+  org.bg181.yi.boot.common.cache.CacheProperties,\
+  org.bg181.yi.boot.common.context.AppContext

@@ -1,4 +1,4 @@
-package org.burgeon.yi.boot.rest.utils;
+package org.bg181.yi.boot.rest.utils;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;

@@ -4,4 +4,4 @@
  * @author Sam Lu
  * @date 2022/07/04
  */
-package org.burgeon.yi.boot.definition;
+package org.bg181.yi.boot.definition;

@@ -1,4 +1,4 @@
-package org.burgeon.yi.basic.user.dto.request;
+package org.bg181.yi.basic.user.dto.request;
 
 import lombok.Data;
 

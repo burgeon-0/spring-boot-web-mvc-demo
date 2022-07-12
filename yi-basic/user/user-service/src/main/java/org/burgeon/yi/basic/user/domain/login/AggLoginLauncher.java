@@ -1,9 +1,9 @@
-package org.burgeon.yi.basic.user.domain.login;
+package org.bg181.yi.basic.user.domain.login;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.burgeon.yi.basic.user.domain.UserServiceErrorEnum;
-import org.burgeon.yi.boot.common.exception.AssertX;
+import org.bg181.yi.basic.user.domain.UserServiceErrorEnum;
+import org.bg181.yi.boot.common.exception.AssertX;
 import org.springframework.stereotype.Component;
 
 /**

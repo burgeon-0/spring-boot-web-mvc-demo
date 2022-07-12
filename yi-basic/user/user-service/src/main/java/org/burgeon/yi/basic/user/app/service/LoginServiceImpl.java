@@ -1,10 +1,10 @@
-package org.burgeon.yi.basic.user.app.service;
+package org.bg181.yi.basic.user.app.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.burgeon.yi.basic.user.domain.login.AggLoginLauncher;
-import org.burgeon.yi.basic.user.dto.request.LoginRequest;
-import org.burgeon.yi.basic.user.service.LoginService;
+import org.bg181.yi.basic.user.domain.login.AggLoginLauncher;
+import org.bg181.yi.basic.user.dto.request.LoginRequest;
+import org.bg181.yi.basic.user.service.LoginService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 

@@ -1,13 +1,13 @@
-package org.burgeon.yi.boot.rest.session.impl;
+package org.bg181.yi.boot.rest.session.impl;
 
 import cn.hutool.core.text.CharSequenceUtil;
 import lombok.RequiredArgsConstructor;
-import org.burgeon.yi.boot.common.cache.CacheProperties;
-import org.burgeon.yi.boot.definition.cache.Cache;
-import org.burgeon.yi.boot.definition.cache.CacheFactory;
-import org.burgeon.yi.boot.rest.session.Session;
-import org.burgeon.yi.boot.rest.session.SessionAdapter;
-import org.burgeon.yi.boot.rest.utils.CookieUtils;
+import org.bg181.yi.boot.common.cache.CacheProperties;
+import org.bg181.yi.boot.definition.cache.Cache;
+import org.bg181.yi.boot.definition.cache.CacheFactory;
+import org.bg181.yi.boot.rest.session.Session;
+import org.bg181.yi.boot.rest.session.SessionAdapter;
+import org.bg181.yi.boot.rest.utils.CookieUtils;
 import org.springframework.beans.factory.annotation.Value;
 
 import javax.servlet.http.Cookie;

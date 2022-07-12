@@ -1,7 +1,7 @@
-package org.burgeon.yi.basic.user.domain;
+package org.bg181.yi.basic.user.domain;
 
 import lombok.Getter;
-import org.burgeon.yi.boot.definition.exception.ErrorEnum;
+import org.bg181.yi.boot.definition.exception.ErrorEnum;
 
 /**
  * 用户服务异常枚举

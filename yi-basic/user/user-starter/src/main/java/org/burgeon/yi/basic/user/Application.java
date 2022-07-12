@@ -1,4 +1,4 @@
-package org.burgeon.yi.basic.user;
+package org.bg181.yi.basic.user;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

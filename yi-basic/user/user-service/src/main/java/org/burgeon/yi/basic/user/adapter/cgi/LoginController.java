@@ -1,9 +1,9 @@
-package org.burgeon.yi.basic.user.adapter.cgi;
+package org.bg181.yi.basic.user.adapter.cgi;
 
 import lombok.RequiredArgsConstructor;
-import org.burgeon.yi.basic.user.dto.request.LoginRequest;
-import org.burgeon.yi.basic.user.service.LoginService;
-import org.burgeon.yi.boot.definition.rest.Response;
+import org.bg181.yi.basic.user.dto.request.LoginRequest;
+import org.bg181.yi.basic.user.service.LoginService;
+import org.bg181.yi.boot.definition.rest.Response;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

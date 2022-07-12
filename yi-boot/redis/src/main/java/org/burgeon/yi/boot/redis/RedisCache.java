@@ -1,7 +1,7 @@
-package org.burgeon.yi.boot.redis;
+package org.bg181.yi.boot.redis;
 
 import lombok.AllArgsConstructor;
-import org.burgeon.yi.boot.definition.cache.Cache;
+import org.bg181.yi.boot.definition.cache.Cache;
 import org.redisson.api.RBucket;
 
 import java.util.concurrent.TimeUnit;

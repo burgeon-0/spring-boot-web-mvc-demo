@@ -1,4 +1,4 @@
-package org.burgeon.yi.boot.rest.session;
+package org.bg181.yi.boot.rest.session;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

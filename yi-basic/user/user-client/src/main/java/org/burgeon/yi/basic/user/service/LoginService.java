@@ -1,6 +1,6 @@
-package org.burgeon.yi.basic.user.service;
+package org.bg181.yi.basic.user.service;
 
-import org.burgeon.yi.basic.user.dto.request.LoginRequest;
+import org.bg181.yi.basic.user.dto.request.LoginRequest;
 
 /**
  * 登录服务

@@ -1,8 +1,8 @@
-package org.burgeon.yi.boot.rest.exception;
+package org.bg181.yi.boot.rest.exception;
 
 import lombok.extern.slf4j.Slf4j;
-import org.burgeon.yi.boot.definition.exception.ValidationException;
-import org.burgeon.yi.boot.definition.rest.Response;
+import org.bg181.yi.boot.definition.exception.ValidationException;
+import org.bg181.yi.boot.definition.rest.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

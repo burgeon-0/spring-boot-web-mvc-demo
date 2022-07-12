@@ -1,4 +1,4 @@
-package org.burgeon.yi.boot.definition.exception;
+package org.bg181.yi.boot.definition.exception;
 
 /**
  * 异常枚举接口

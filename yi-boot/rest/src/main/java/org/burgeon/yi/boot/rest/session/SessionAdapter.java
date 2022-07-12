@@ -1,9 +1,9 @@
-package org.burgeon.yi.boot.rest.session;
+package org.bg181.yi.boot.rest.session;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.burgeon.yi.boot.definition.cache.Cache;
+import org.bg181.yi.boot.definition.cache.Cache;
 
 /**
  * Session适配器

@@ -10,7 +10,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>org.burgeon.yi</groupId>
+    <groupId>org.bg181.yi</groupId>
     <artifactId>yi</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -53,42 +53,42 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.burgeon.yi</groupId>
+                <groupId>org.bg181.yi</groupId>
                 <artifactId>yi-basic-user-client</artifactId>
                 <version>${yi-basic-user-client.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.burgeon.yi</groupId>
+                <groupId>org.bg181.yi</groupId>
                 <artifactId>yi-basic-user-service</artifactId>
                 <version>${yi-basic-user-service.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.burgeon.yi</groupId>
+                <groupId>org.bg181.yi</groupId>
                 <artifactId>yi-boot-common</artifactId>
                 <version>${yi-boot-common.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.burgeon.yi</groupId>
+                <groupId>org.bg181.yi</groupId>
                 <artifactId>yi-boot-definition</artifactId>
                 <version>${yi-boot-definition.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.burgeon.yi</groupId>
+                <groupId>org.bg181.yi</groupId>
                 <artifactId>yi-boot-redis</artifactId>
                 <version>${yi-boot-redis.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.burgeon.yi</groupId>
+                <groupId>org.bg181.yi</groupId>
                 <artifactId>yi-boot-rest</artifactId>
                 <version>${yi-boot-rest.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.burgeon.yi</groupId>
+                <groupId>org.bg181.yi</groupId>
                 <artifactId>yi-adapter-sms-adapter</artifactId>
                 <version>${yi-adapter-sms-adapter.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.burgeon.yi</groupId>
+                <groupId>org.bg181.yi</groupId>
                 <artifactId>yi-adapter-sms-adapter-impl</artifactId>
                 <version>${yi-adapter-sms-adapter-impl.version}</version>
             </dependency>

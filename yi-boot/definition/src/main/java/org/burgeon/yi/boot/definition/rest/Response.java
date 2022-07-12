@@ -1,8 +1,8 @@
-package org.burgeon.yi.boot.definition.rest;
+package org.bg181.yi.boot.definition.rest;
 
 import lombok.Data;
-import org.burgeon.yi.boot.definition.exception.ErrorEnum;
-import org.burgeon.yi.boot.definition.exception.ValidationException;
+import org.bg181.yi.boot.definition.exception.ErrorEnum;
+import org.bg181.yi.boot.definition.exception.ValidationException;
 
 /**
  * Web请求，返回结果

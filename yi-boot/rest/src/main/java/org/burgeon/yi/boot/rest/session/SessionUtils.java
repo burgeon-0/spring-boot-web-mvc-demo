@@ -1,6 +1,6 @@
-package org.burgeon.yi.boot.rest.session;
+package org.bg181.yi.boot.rest.session;
 
-import org.burgeon.yi.boot.common.context.AppContext;
+import org.bg181.yi.boot.common.context.AppContext;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

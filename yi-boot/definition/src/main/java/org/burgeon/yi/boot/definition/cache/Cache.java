@@ -1,4 +1,4 @@
-package org.burgeon.yi.boot.definition.cache;
+package org.bg181.yi.boot.definition.cache;
 
 import java.util.concurrent.TimeUnit;
 
