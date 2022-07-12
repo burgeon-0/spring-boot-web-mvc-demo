@@ -5,7 +5,6 @@ import cn.hutool.crypto.digest.MD5;
 import cn.hutool.json.JSONUtil;
 import org.bg181.yi.boot.rest.session.Session;
 import org.bg181.yi.boot.rest.utils.CookieUtils;
-import org.bg181.yi.boot.rest.session.SessionFilter;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.concurrent.ConcurrentHashMap;
