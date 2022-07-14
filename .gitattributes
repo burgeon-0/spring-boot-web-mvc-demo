@@ -1,3 +1,7 @@
+# github linguist exclusions
 *.html linguist-vendored
 *.js linguist-vendored
+*.js.map linguist-vendored
 *.css linguist-vendored
+*.css.map linguist-vendored
+*.json linguist-vendored
