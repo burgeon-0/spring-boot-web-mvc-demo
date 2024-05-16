@@ -36,7 +36,7 @@
         <yi-adapter-sms-adapter-impl.version>1.0.0-SNAPSHOT</yi-adapter-sms-adapter-impl.version>
         <redisson-spring-boot-starter.version>3.17.4</redisson-spring-boot-starter.version>
         <lombok.version>1.18.24</lombok.version>
-        <hutool-all.version>5.8.14</hutool-all.version>
+        <hutool-all.version>5.8.21</hutool-all.version>
         <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
     </properties>
